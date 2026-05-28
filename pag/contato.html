@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireFLY | Contato</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <section>
+            <a href="#" class="logo">
+                <img src="" alt="logo-firefly">
+            </a>
+            <nav class="navbar">
+                <a href="../index.html">Inicial</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="faq.html">FAQ</a>
+                <a href="integrantes.html">Integrantes</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <div class="icons"></div>
+        </section>
+    </header>
+
+    <main class="container-contato">
+        <section class="info-contato">
+            <h2>Fale Conosco</h2>
+            <p>Entre em contato com a equipe FireFLY! Tem dúvidas sobre como nossa tecnologia funciona? Quer saber como nossa inteligência geoespacial pode ser aplicada em operações de resgate? Use o canal abaixo para falar diretamente conosco.</p>
+
+            <div class="dados-contato">
+                <p><strong>E-mail:</strong> contato@firefly.com.br</p>
+                <p><strong>Telefone:</strong> (11) 4002-8922</p>
+                <p><strong>Localização:</strong> São Paulo, SP - FIAP</p>
+            </div>
+        </section>
+
+        <section class="secao-formulario">
+            <form id="form-contato" class="formulario-estilizado">
+                <div class="grupo-input">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome aqui">
+                    <span id="span1"></span>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="email@exemplo.com">
+                    <span id="span2"></span>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?"></textarea>
+                    <span id="span3"></span>
+                </div>
+
+                <button type="submit" class="btn">Enviar Mensagem</button>
+
+                <p id="msg-erro" class="feedback erro" style="display: none;"></p>
+                <p id="msg-sucesso" class="feedback sucesso" style="display: none;">Sua mensagem foi enviada com sucesso! Logo entraremos em contato.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FireFLY - Global Solution. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
