@@ -202,6 +202,12 @@ section {
     display: block;
 }
 
+
+
+
+
+
+
 /* ===== MENU ===== */
 .title {
     font-size: 4rem;
@@ -265,6 +271,10 @@ section {
     background: url("/img/planeta2.jpg") center / cover;
 }
 
+.home-solucao {
+    color: #fff;
+    background: url("/img/planeta3.jpg") center / cover;
+}
 
 
 
