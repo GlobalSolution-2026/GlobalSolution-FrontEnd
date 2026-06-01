@@ -151,7 +151,7 @@ section {
 
 /* ===== HOME ===== */
 .home-container {
-    background: url("/img/planeta1.png") center / cover;
+    background: url("/img/helicoptero.png") center / cover;
     display: flex;
     align-items: center;
     min-height: 100vh;
@@ -414,7 +414,7 @@ section {
 /* ===== PÁGINA SOBRE / SOLUÇÃO ===== */
 .home-sobre {
     color: #fff;
-    background: url("/img/planeta2.jpg") center / cover;
+    background: url("/img/helicoptero03.png") center / cover;
 }
 
 .home-solucao {
@@ -1186,4 +1186,52 @@ footer {
     .content h3 {
         font-size: 2.5rem;
     }
+}
+
+
+/* ===== GRID SOLUÇÃO ===== */
+.grid-solucao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card-mini {
+    background-color: var(--black);
+    border: var(--border);
+    padding: 3rem 2.5rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-mini:hover {
+    border-color: var(--main-color);
+    transform: translateY(-4px);
+}
+
+.badge-icon {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--bg);
+    background-color: var(--main-color);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-mini h3 {
+    font-size: 1.9rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.card-mini p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
 }
