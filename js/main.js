@@ -1,6 +1,6 @@
-// ========================================
+
 // ANIMAÇÃO DE SCROLL
-// ========================================
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -9,14 +9,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.about, .menu, .secao-sobre').forEach(el => {
+document.querySelectorAll('.about, .menu, .secao-sobre, .numeros, .cta-section, .secao-simulacao').forEach(el => {
     observer.observe(el);
 });
 
 
-// ========================================
 // ACCORDION FAQ
-// ========================================
+
 document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -29,9 +28,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 
-// ========================================
 // MENU HAMBÚRGUER
-// ========================================
 const hamburger = document.getElementById('hamburger');
 const navbar = document.querySelector('.navbar');
 
@@ -57,9 +54,8 @@ if (hamburger && navbar) {
 }
 
 
-// ========================================
+
 // VALIDAÇÃO DO FORMULÁRIO
-// ========================================
 const form = document.getElementById('form-contato');
 
 if (form) {
@@ -135,9 +131,8 @@ if (form) {
 }
 
 
-// ========================================
+
 // LINK ATIVO NO MENU
-// ========================================
 const links = document.querySelectorAll('.navbar a');
 const paginaAtual = window.location.pathname.split('/').pop();
 
