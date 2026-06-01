@@ -4,119 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireFLY | Inteligência Geoespacial para Resgates</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
     <script src="js/main.js" defer></script>
-    <title>Projeto Global Solution</title>
-
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header class="header">
         <section>
-            <a href="#" class="logo">
-                <img src="img/logo.png" alt="logo-exemplo">
-
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="FireFLY">
             </a>
-
-            <nav class="navbar">
+            <nav class="navbar" id="navbar">
                 <a href="index.html">Inicio</a>
                 <a href="pag/sobre.html">Sobre</a>
                 <a href="pag/solucao.html">Nossa Solucao</a>
-                <a href="pag/dashboard.html">Dashboard</a>
                 <a href="pag/faq.html">FAQ</a>
                 <a href="pag/integrantes.html">Integrantes</a>
                 <a href="pag/contato.html">Contato</a>
             </nav>
-
-            <div class="icons">
-                <!-- adicionar icones -->
-            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+            <div class="icons"></div>
         </section>
     </header>
 
+    <!-- HERO -->
     <div class="home-container">
-
-
         <section id="home">
             <div class="content">
-                <h3>Firefly - Inteligência Geoespacial para Resgates Críticos.</h3>
-                <p>"Transformamos dados de satélite em decisões de segurança em tempo real. otimizamos rotas para
-                    maximizar a sobrevivência e reduzir riscos em operações de alta complexidade."</p>
-                <a href="#menu" class="btn">CONHECA O PROJETO</a> <!--tem que direcionar para a page sobre -->
+                <span class="content-tag">Tecnologia de Resgate</span>
+                <h1>Cada segundo conta.<br>Nos otimizamos os seus.</h1>
+                <p>O FireFLY transforma dados de satélite em rotas de resgate
+                    inteligentes, guiando equipes pelo caminho mais seguro em
+                    tempo real — mesmo em cenários de desastre total.</p>
+                <div class="hero-btns">
+                    <a href="pag/solucao.html" class="btn">Nossa Solucao</a>
+                    <a href="pag/sobre.html" class="btn btn-outline">Saiba Mais</a>
+                </div>
             </div>
-
         </section>
     </div>
 
+    <!-- PROBLEMA EM NÚMEROS -->
+    <section class="numeros">
+        <h2 class="title">O <span>Problema</span> em Numeros</h2>
+        <div class="numeros-grid">
 
-    <section class="menu" id="menu">
-        <h2 class="title"><span>Nosso Projeto</span></h2>
+            <div class="numero-card">
+                <div class="numero-valor">30%</div>
+                <p class="numero-label">das vítimas não são resgatadas dentro da Hora de Ouro</p>
+            </div>
+
+            <div class="numero-card destaque">
+                <div class="numero-valor">6x</div>
+                <p class="numero-label">mais chance de sobrevivência com resgate nos primeiros 60 minutos</p>
+            </div>
+
+            <div class="numero-card">
+                <div class="numero-valor">72h</div>
+                <p class="numero-label">tempo médio para mapear áreas afetadas com métodos tradicionais</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="menu como-funciona" id="como-funciona">
+        <h2 class="title">Como o <span>FireFLY</span> Funciona</h2>
         <div class="box-container">
 
             <div class="box">
-                <h3>Descrição</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h3>Deteccao</h3>
+                <p>Satélites monitoram a área em tempo real, identificando
+                    incêndios, alagamentos e zonas de risco automaticamente.</p>
             </div>
 
             <div class="box">
-                <h3>Objetivo</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h3>Calculo de Rota</h3>
+                <p>O algoritmo A* processa os dados e calcula a rota mais
+                    segura, evitando obstáculos e priorizando a velocidade
+                    de chegada.</p>
             </div>
 
             <div class="box">
-                <h3>Diferencial</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h3>Resgate</h3>
+                <p>A equipe recebe a rota otimizada em milissegundos e
+                    segue o caminho com máxima segurança até a vítima.</p>
             </div>
 
         </div>
     </section>
 
-    <section class="secao-sobre" id="roadmap">
-        <div class="cabecalho-secao">
-            <span class="tag-projeto">Próximos Passos</span>
-            <h2>Roadmap de Desenvolvimento</h2>
-        </div>
-        <div class="timeline">
-            <article class="timeline-item">
-                <div class="timeline-badge">1</div>
-                <div class="timeline-conteudo">
-                    <h3>xxxxxxxxxxxx</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta reiciendis inventore nisi quos,
-                        eum fugit vel adipisci recusandae ab dolor velit. Laboriosam ex delectus quidem! Magnam
-                        exercitationem magni a inventore.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-badge">2</div>
-                <div class="timeline-conteudo">
-                    <h3>xxxxxxxx</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus esse illo odit, porro, neque
-                        doloribus rem ullam fugit magni ea ducimus repellat hic eaque voluptatibus fuga molestias eius
-                        cupiditate soluta!</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-badge">3</div>
-                <div class="timeline-conteudo">
-                    <h3>xxxxxxxxxxxx</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aliquam possimus autem soluta,
-                        distinctio vel perferendis voluptate cumque labore fugiat magnam dolorum suscipit. Consequatur
-                        possimus atque ea odit quae nisi.</p>
-                </div>
-            </article>
+    <!-- DIFERENCIAL -->
+    <section class="about" id="diferencial">
+        <h2>Nosso <span>Diferencial</span></h2>
+        <div class="row">
+            <div class="container-image">
+                <img src="img/satelite.jpg" alt="Satélite FireFLY">
+            </div>
+            <div class="content">
+                <h3>Inteligencia que salva vidas</h3>
+                <p>Enquanto sistemas tradicionais dependem de mapas estáticos
+                    e decisões humanas sob pressão, o FireFLY processa variáveis
+                    críticas em tempo real e recalcula rotas em milissegundos
+                    quando um novo obstáculo surge.</p>
+                <ul>
+                    <li><strong>Tempo real:</strong> Rotas recalculadas
+                        instantaneamente ao detectar novos riscos.</li>
+                    <li><strong>Sem dependência de infraestrutura:</strong>
+                        Funciona mesmo quando redes de comunicação falham.</li>
+                    <li><strong>Baseado em ciência:</strong> Algoritmo A* com
+                        heurística inspirada na Cadeia de Markov.</li>
+                </ul>
+                <a href="pag/solucao.html" class="btn">Ver Nossa Solucao</a>
+            </div>
         </div>
     </section>
 
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Pronto para ver o sistema em acao?</h2>
+            <p>Acesse Nossa Solucao e simule uma missão de resgate com
+                o algoritmo A* em tempo real.</p>
+            <a href="pag/solucao.html" class="btn">Acessar Simulacao</a>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Firefly - Gloabal Solution. Todos os direitos reservados.</p>
+        <p>&copy; 2026 FireFLY - Global Solution. Todos os direitos reservados.</p>
     </footer>
 
 </body>
-
 </html>
