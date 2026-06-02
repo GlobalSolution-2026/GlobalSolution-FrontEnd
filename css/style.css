@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 /* ===== VARIÁVEIS ===== */
 :root {
-    --main-color: #d3ad7f;
+    --main-color: #e67e22;
     --black: #13131a;
     --bg: #010103;
     --border: 0.1rem solid rgba(255, 255, 255, 0.3);
@@ -1169,7 +1169,15 @@ footer {
 }
 
 
-/* ===== RESPONSIVO - MOBILE PEQUENO (até 380px) ===== */
+
+
+
+
+
+
+
+
+/* ===== RESPONSIVO - MOBILE PEQUENO  ===== */
 @media (max-width: 380px) {
     :root {
         font-size: 8px;
@@ -1187,6 +1195,19 @@ footer {
         font-size: 2.5rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ===== GRID SOLUÇÃO ===== */
@@ -1235,3 +1256,196 @@ footer {
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.8;
 }
+
+
+
+.cabecalho-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+}
+
+.cabecalho-principal .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cabecalho-principal .logo h1 {
+    font-size: 2rem;
+    color: var(--main-color);
+    text-transform: none;
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-navegacao ul li a {
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.menu-navegacao ul li a:hover,
+.menu-navegacao ul li a.ativo {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Container principal da página solução */
+.container-solucao {
+    padding-top: 10rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Introdução */
+.introducao-solucao {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+}
+
+.introducao-solucao h2 {
+    font-size: 3.5rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.box-texto p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-transform: none;
+}
+
+/* Grid de cards (pilares) */
+.grid-pilares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.card-pilar {
+    background-color: var(--black);
+    border: var(--border);
+    padding: 3.5rem 3rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-pilar:hover {
+    border-color: var(--main-color);
+    transform: translateY(-4px);
+}
+
+.icone-pilar {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.card-pilar h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: none;
+}
+
+.card-pilar p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    text-transform: none;
+}
+
+/* Seção de fluxo */
+.detalhe-ranking {
+    padding: 4rem 2rem 6rem;
+}
+
+.box-destaque {
+    background-color: var(--black);
+    border: var(--border);
+    padding: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.box-destaque h2 {
+    font-size: 2.8rem;
+    color: var(--main-color);
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.box-destaque > p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    text-transform: none;
+    margin-bottom: 3rem;
+}
+
+.fluxo-ranking {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+
+.etapa-ranking {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border: var(--border);
+    transition: border-color 0.3s ease;
+}
+
+.etapa-ranking:hover {
+    border-color: var(--main-color);
+}
+
+.etapa-ranking span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: #000;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.etapa-ranking h4 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    text-transform: none;
+}
+
+.etapa-ranking p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    text-transform: none;
+}
+
+
+
