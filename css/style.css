@@ -2,6 +2,7 @@
 /* ===== VARIÁVEIS ===== */
 :root {
     --main-color: #e67e22;
+    /* A utilização das variáveis estão erradas, corrigir */
     --black: #13131a;
     --bg: #010103;
     --border: 0.1rem solid rgba(255, 255, 255, 0.3);
@@ -81,9 +82,9 @@ section {
     padding-bottom: 0.5rem;
 }
 
-
+/* Essa parte do hamburguer está sem função, retirei de cada página, sua utilização seria no FAQ, mas o js já faz ela */
 /* ===== HAMBÚRGUER ===== */
-.hamburger {
+/* .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -112,7 +113,7 @@ section {
 
 .hamburger.ativo span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-}
+} */
 
 
 /* ===== BOTÃO ===== */
@@ -124,8 +125,8 @@ section {
     cursor: pointer;
     margin-top: 1rem;
     display: inline-block;
-
-    font-family: "Fredoka", sans-serif;
+/* Você tem a opção de utilizar uma fonte global no root */
+    font-family: "Fredoka", sans-serif; 
     font-optical-sizing: auto;
     font-weight: 500; /* escolha o peso desejado */
     font-style: normal;
@@ -149,9 +150,9 @@ section {
 }
 
 
-/* ===== HOME ===== */
+/* Index */
 .home-container {
-    background: url("/img/helicoptero.png") center / cover;
+    background: url("../img/helicoptero.png") center / cover;
     display: flex;
     align-items: center;
     min-height: 100vh;
@@ -167,7 +168,6 @@ section {
     max-width: 60rem;
 }
 
-/* h1 hero — página inicial */
 .content h1 {
     color: #fff;
     font-size: 5.5rem;
@@ -176,7 +176,6 @@ section {
     text-transform: none;
 }
 
-/* h3 hero — páginas internas (sobre, solução...) */
 .content h3 {
     color: #fff;
     font-size: 5rem;
@@ -190,7 +189,6 @@ section {
     padding: 1rem 0;
 }
 
-/* tag acima do título hero */
 .content-tag {
     display: block;
     font-size: 1.2rem;
@@ -200,7 +198,6 @@ section {
     margin-bottom: 1.5rem;
 }
 
-/* botões hero lado a lado */
 .hero-btns {
     display: flex;
     gap: 1.5rem;
@@ -208,8 +205,66 @@ section {
     margin-top: 2rem;
 }
 
+.title {
+    font-size: 4rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
 
-/* ===== ABOUT ===== */
+.title span {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.numeros {
+    padding: 7rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.numeros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.numero-card {
+    background-color: var(--black);
+    border: var(--border);
+    padding: 4rem 3rem;
+    text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.numero-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-4px);
+}
+
+.numero-card.destaque {
+    border-color: var(--main-color);
+    background: linear-gradient(135deg, var(--black), #1e1a14);
+}
+
+.numero-valor {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--main-color);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.numero-label {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    text-transform: none;
+}
+
+/* Sobre*/
 .about .row {
     display: flex;
     align-items: center;
@@ -258,22 +313,14 @@ section {
     display: block;
 }
 
-
-/* ===== MENU / CARDS ===== */
-.title {
-    font-size: 4rem;
-    color: var(--main-color);
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 4rem;
-}
-
-.title span {
-    text-transform: uppercase;
+.home-sobre {
     color: #fff;
+    background: url("../img/helicoptero03.png") center / cover;
 }
 
-.menu .box-container {
+/* Sem funcionalidade */
+
+/* .menu .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
@@ -302,66 +349,19 @@ section {
     font-size: 1.6rem;
     line-height: 1.8;
     padding: 1rem 0;
-}
+} */
 
+/* sem funcionalidade */
 /* ícone nos cards de como funciona */
-.box-icon {
+/* .box-icon {
     font-size: 4rem;
     margin-bottom: 1.5rem;
     display: block;
-}
+} */
 
-
-/* ===== NÚMEROS (index) ===== */
-.numeros {
-    padding: 7rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.numeros-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-}
-
-.numero-card {
-    background-color: var(--black);
-    border: var(--border);
-    padding: 4rem 3rem;
-    text-align: center;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.numero-card:hover {
-    border-color: var(--main-color);
-    transform: translateY(-4px);
-}
-
-.numero-card.destaque {
-    border-color: var(--main-color);
-    background: linear-gradient(135deg, var(--black), #1e1a14);
-}
-
-.numero-valor {
-    font-size: 6rem;
-    font-weight: 700;
-    color: var(--main-color);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-}
-
-.numero-label {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-    text-transform: none;
-}
-
-
+/* Sem funcionalidade, não tem nem as classes certas */
 /* ===== CTA SECTION (index) ===== */
-.cta-section {
+/* .cta-section {
     background: linear-gradient(135deg, var(--black), #1a1008);
     border-top: var(--border);
     border-bottom: var(--border);
@@ -387,11 +387,12 @@ section {
     line-height: 1.8;
     margin-bottom: 3rem;
     text-transform: none;
-}
+} */
 
 
 /* ===== ANIMAÇÃO DE SCROLL ===== */
-.about,
+/* explicar melhor o que isso faz, não achei funcionalidade */
+/* .about,
 .menu,
 .secao-sobre,
 .numeros,
@@ -408,23 +409,17 @@ section {
 .cta-section.visivel {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
-
-/* ===== PÁGINA SOBRE / SOLUÇÃO ===== */
-.home-sobre {
+/* Sem funcionalidade */
+/* .home-solucao {
     color: #fff;
-    background: url("/img/helicoptero03.png") center / cover;
-}
+    background: url("../img/planeta3.jpg") center / cover;
+} */
 
-.home-solucao {
-    color: #fff;
-    background: url("/img/planeta3.jpg") center / cover;
-}
-
-
+/* Sem funcionalidade */
 /* ===== TIMELINE / ROADMAP ===== */
-.secao-sobre {
+/* .secao-sobre {
     padding: 5rem 2rem;
 }
 
@@ -523,10 +518,10 @@ section {
 
 .timeline-item:hover .timeline-conteudo {
     border-color: var(--main-color);
-}
+} */
 
 
-/* ===== INTEGRANTES ===== */
+/* Integrantes */
 .intro-quem-somos {
     text-align: center;
     padding: 10rem 5% 3rem;
@@ -637,7 +632,7 @@ section {
 }
 
 
-/* ===== FAQ ===== */
+/* FAQ */
 .container-faq {
     max-width: 900px;
     margin: 0 auto;
@@ -725,7 +720,7 @@ section {
 }
 
 
-/* ===== FORMULÁRIO DE CONTATO ===== */
+/* Contato */
 .container-contato {
     max-width: 1100px;
     margin: 0 auto;
@@ -838,7 +833,7 @@ section {
 }
 
 
-/* ===== FOOTER ===== */
+/* Rodapé */
 footer {
     text-align: center;
     padding: 2.5rem;
@@ -848,13 +843,9 @@ footer {
     text-transform: none;
 }
 
-
-/* ===== RESPONSIVO - TABLET (até 991px) ===== */
-@media (max-width: 991px) {
-
-    .hamburger {
-        display: flex;
-    }
+/* Tem que ajeitar as responsividades, elas estão erradas */
+/* Responsividade */
+@media (max-width: 900px) {
 
     .navbar {
         display: none;
@@ -929,8 +920,6 @@ footer {
     }
 }
 
-
-/* ===== RESPONSIVO - TABLET MENOR (até 768px) ===== */
 @media (max-width: 768px) {
     :root {
         font-size: 9px;
@@ -1168,15 +1157,6 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
-
-
 /* ===== RESPONSIVO - MOBILE PEQUENO  ===== */
 @media (max-width: 380px) {
     :root {
@@ -1197,20 +1177,8 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== GRID SOLUÇÃO ===== */
+/* Ajeitar o código daqui pra baixo */
+/* ===== GRID SOBRE ===== */
 .grid-solucao {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -1256,7 +1224,6 @@ footer {
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.8;
 }
-
 
 
 .cabecalho-principal {
@@ -1446,6 +1413,3 @@ footer {
     line-height: 1.7;
     text-transform: none;
 }
-
-
-
