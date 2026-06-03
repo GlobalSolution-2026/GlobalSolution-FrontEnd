@@ -74,8 +74,8 @@ if (form) {
             const span = c.parentElement.querySelector('span');
             if (span) span.textContent = '';
         });
-        msgErro.style.display = 'none';
-        msgSucesso.style.display = 'none';
+        msgErro.classList.add('hidden');
+        msgSucesso.classList.add('hidden');
 
         let valido = true;
 
@@ -108,15 +108,15 @@ if (form) {
 
         if (!valido) {
             msgErro.textContent = 'Preencha todos os campos obrigatórios.';
-            msgErro.style.display = 'block';
+            msgErro.classList.remove('hidden');
             return;
         }
 
-        msgSucesso.style.display = 'block';
+        msgSucesso.classList.remove('hidden');
         form.reset();
 
         setTimeout(() => {
-            msgSucesso.style.display = 'none';
+            msgSucesso.classList.add('hidden');
         }, 5000);
     });
 

@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-/* ===== VARIÁVEIS ===== */
+
+
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
 :root {
     --main-color: #e67e22;
     /* A utilização das variáveis estão erradas, corrigir */
     --black: #13131a;
     --bg: #010103;
     --border: 0.1rem solid rgba(255, 255, 255, 0.3);
-    font-size: 10px;
+
 }
 
+html {
+    font-size: 62%;
+}
 
 /* ===== RESET ===== */
 * {
@@ -152,7 +159,7 @@ section {
 
 /* Index */
 .home-container {
-    background: url("../img/helicoptero.png") center / cover;
+    background: url("../assets/helicoptero.png") center / cover;
     display: flex;
     align-items: center;
     min-height: 100vh;
@@ -315,7 +322,7 @@ section {
 
 .home-sobre {
     color: #fff;
-    background: url("../img/helicoptero03.png") center / cover;
+    background: url("../assets/helicoptero03.png") center / cover;
 }
 
 /* Sem funcionalidade */
@@ -997,7 +1004,7 @@ footer {
 }
 
 
-/* ===== RESPONSIVO - MOBILE (até 600px) ===== */
+/* ===== RESPONSIVO - MOBILE ===== */
 @media (max-width: 600px) {
     :root {
         font-size: 8.5px;
@@ -1412,4 +1419,9 @@ footer {
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
     text-transform: none;
+}
+
+
+.hidden {
+    display: none !important;
 }
