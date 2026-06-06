@@ -11,29 +11,24 @@
 
 <body>
 
-    <header class="header">
-        <div class="header-container">
-
-            <a href="../index.html" class="logo">
-                <img src="../assets/logo.png" alt="Logo Firefly">
-            </a>
-
-
-            <nav class="navbar" id="navbar">
-                <a href="../index.html">Início</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="solucao.html">Nossa Solução</a>
-                <a href="faq.html" class="ativo">FAQ</a>
-                <a href="integrantes.html">Integrantes</a>
-                <a href="contato.html">Contato</a>
-            </nav>
-
+    <header class="cabecalho-principal">
+        <div class="logo">
+            <a href="../index.html"><img src="../assets/logo.png" alt="Firefly" width="100px"></a>
+            <h1>FIREFLY</h1>
         </div>
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="solucao.html">Nossa Solução</a></li>
+                <li><a href="faq.html" class="ativo">FAQ</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container-faq">
-        <h1 class="sr-only">Perguntas Frequentes - Firefly</h1>
-
         <section class="introducao-faq">
             <h2>Perguntas Frequentes</h2>
             <p>Reunimos algumas dúvidas sobre a Firefly</p>
@@ -41,48 +36,52 @@
 
         <section class="accordion">
             <article class="faq-item">
-                <button class="faq-question">Quais fatores aumentam a pontuação de uma área?</button>
+                <button class="faq-question">O que é o Processo de Decisão de Markov (MDP) e como o Firefly o
+                    utiliza?</button>
                 <div class="faq-answer">
-                    <p>Vários fatores contribuem para a pontuação: gravidade das lesões ou risco de vida, tempo de
-                        exposição a condições adversas (enchentes, incêndios), número de vítimas no local, dificuldade
-                        de acesso e proximidade de riscos secundários como desmoronamentos ou alagamentos em progressão.
-                    </p>
+                    <p>O MDP é um modelo matemático voltado para a tomada de decisões em cenários onde os resultados são
+                        parcialmente aleatórios e parcialmente controlados pelo tomador de decisão. O Firefly simplifica
+                        esse conceito aplicando uma equação dinâmica em tempo real que calcula o risco do cenário. A
+                        cada ação simulada ou tomada pelo operador, o algoritmo avalia o impacto e exibe em destaque a
+                        estratégia que oferece a maior "Recompensa" (maior chance de sucesso com menor risco
+                        operacional).</p>
                 </div>
             </article>
 
             <article class="faq-item">
-                <button class="faq-question">Como funciona o sistema de pontuação do Firefly?</button>
+                <button class="faq-question">Como o sistema garante a comunicação em biomas isolados ou áreas de
+                    desastre total?</button>
                 <div class="faq-answer">
-                    <p>O Firefly coleta dados de clima, terreno, localização das vítimas e nível de risco ambiental. Com
-                        base nessas informações, cada área recebe uma pontuação numérica. Quanto maior a pontuação,
-                        maior a urgência e a necessidade de resgate imediato. Isso permite que as equipes priorizem os
-                        locais mais críticos primeiro.</p>
+                    <p>Este é um dos pilares do projeto. O Firefly integra validações para o uso de tecnologias de
+                        satélite de órbita baixa (LEO), como Starlink ou Kuiper. Antes de alocar recursos, o sistema
+                        verifica a infraestrutura de comunicação da região. Se a área estiver totalmente isolada, a
+                        plataforma viabiliza a descida e subida de dados via IoT de 10 em 10 segundos diretamente via
+                        constelações de satélites, impedindo que a equipe de resgate perca o contato.</p>
                 </div>
             </article>
 
             <article class="faq-item">
-                <button class="faq-question">Como o Firefly utiliza inteligência artificial e dados em tempo real para
-                    definir as rotas de resgate mais eficientes?</button>
+                <button class="faq-question">O que acontece se o operador tomar uma decisão incompatível com o
+                    cenário?</button>
                 <div class="faq-answer">
-                    <p>O Firefly utiliza inteligência artificial para analisar dados em tempo real, como condições
-                        climáticas, características do terreno, localização das vítimas e níveis de risco.
-                        A partir dessas informações, o sistema processa diferentes cenários e identifica os caminhos
-                        mais seguros e rápidos para as equipes de resgate.
-                        Além disso, a plataforma se adapta dinamicamente a mudanças no ambiente, como novos obstáculos
-                        ou agravamento das condições, recalculando as rotas sempre que necessário.
-                        Isso garante decisões mais precisas, reduz o tempo de resposta e aumenta significativamente as
-                        chances de salvar vidas.
-                    </p>
+                    <p>O Firefly possui um sistema automatizado de mitigação de erros (Smart Allocation). Se o operador
+                        tentar enviar uma equipe terrestre para uma área alagada, ou um drone de reconhecimento comum
+                        para uma região com visibilidade nula por neblina, o sistema aplica penalidades de pontuação
+                        instantâneas e gera alertas visuais. No encerramento da missão, essas penalidades são
+                        consolidadas na tabela de auditoria de forma imutável, o que afeta diretamente a taxa de acerto
+                        do operador. </p>
                 </div>
             </article>
 
             <article class="faq-item">
-                <button class="faq-question">Como garantir que a pontuação seja justa e precisa?</button>
+                <button class="faq-question">Os dados meteorológicos e de sensores são atualizados de quanto em quanto
+                    tempo?</button>
                 <div class="faq-answer">
-                    <p>O Firefly utiliza múltiplas fontes de dados oficiais e aplica um algoritmo de ponderação que
-                        ajusta os pesos de cada fator conforme o tipo de desastre. Além disso, as equipes podem inserir
-                        informações manuais para corrigir ou complementar a pontuação, garantindo que decisões críticas
-                        nunca dependam exclusivamente de dados automáticos.
+                    <p>O sistema é alimentado em tempo real. Os dados provenientes de sensores de campo e dispositivos
+                        IoT são recebidos a cada 10 segundos. Caso alguma variável crítica (como velocidade do vento,
+                        volume de chuva ou visibilidade) ultrapasse os limites toleráveis de segurança, o sistema
+                        recalcula o "Multiplicador de Clima" e dispara alertas visuais imediatos para que o operador
+                        mude a estratégia de resgate.
                     </p>
                 </div>
             </article>
@@ -92,6 +91,7 @@
     <footer>
         <p>&copy; 2026 Firefly - Global Solution. Todos os direitos reservados.</p>
     </footer>
+
 
 </body>
 

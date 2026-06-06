@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -11,59 +11,73 @@
 
 <body>
 
-    <header class="header">
-        <section>
-            <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Firefly">
-            </a>
-            <nav class="navbar" id="navbar">
-                <a href="index.html">Início</a>
-                <a href="pag/sobre.html">Sobre</a>
-                <a href="pag/solucao.html">Nossa Solução</a>
-                <a href="pag/faq.html">FAQ</a>
-                <a href="pag/integrantes.html">Integrantes</a>
-                <a href="pag/contato.html">Contato</a>
-            </nav>
-    </header>
-
-    <div class="home-container">
-        <section id="home">
-            <div class="content">
-                <span class="content-tag">Tecnologia com rastro de inovação e sustentabilidade</span>
-                <h1>Transformamos ações sustentáveis em recompensas reais</h1>
-                <p>Unindo gamificação, tecnologia e hábitos sustentáveis — criando uma plataforma que torna o engajamento ambiental tangível e motivador.</p>
-                <div class="hero-btns">
-                    <a href="pag/sobre.html" class="btn">Conheça o Projeto</a>
-                    <a href="pag/solucao.html" class="btn btn-outline">Nossa Solução</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-    <section class="numeros">
-        <h2 class="title">O Resumo do <span>Projeto</span> </h2>
-        <div class="numeros-grid">
-
-            <div class="numero-card">
-                <div class="numero-valor">📚</div>
-                <p class="numero-label"><strong>Descrição</strong><br>Transformamos dados geoespaciais e informações de desastre em uma pontuação de urgência para resgate. O sistema prioriza áreas com maior risco, ajudando equipes a salvar mais vidas com rapidez e precisão.</p>
-            </div>
-
-            <div class="numero-card destaque">
-                <div class="numero-valor">🎯</div>
-                <p class="numero-label"><strong>Objetivo</strong><br>Colocar a segurança das vítimas no centro da decisão. A plataforma gera uma pontuação objetiva e em tempo real para que os recursos de resgate sejam direcionados primeiro aos locais de maior urgência.</p>
-            </div>
-
-            <div class="numero-card">
-                <div class="numero-valor">🏆</div>
-                <p class="numero-label"><strong>Diferencial</strong><br>Sistema baseado na Cadeia de Markov que calcula a evolução do risco. Atualização dinâmica com dados de clima, terreno e vítimas, garantindo que a pontuação reflita a realidade em constante mudança do cenário de desastre.</p>
-            </div>
+    <header class="cabecalho-principal">
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="Firefly"></a>
+            <h1>FIREFLY</h1>
 
         </div>
-    </section>
 
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="index.html" class="ativo">Início</a></li>
+                <li><a href="pag/sobre.html">Sobre</a></li>
+                <li><a href="pag/solucao.html">Nossa Solução</a></li>
+                <li><a href="pag/faq.html">FAQ</a></li>
+                <li><a href="pag/integrantes.html">Integrantes</a></li>
+                <li><a href="pag/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="info-section">
+            <div class="conteudo-info">
+                <h2>Transformando incerteza em decisões seguras.</h2>
+                <p class="info-subtitulo">
+                    O Firefly utiliza inteligência preditiva e modelos matemáticos de decisão (MDP) para guiar equipes
+                    de salvamento em missões críticas. O sistema avalia riscos e recursos em tempo real, indicando o
+                    caminho mais rápido para salvar vidas.</p>
+                <a href="pag/sobre.html" class="btn-primary">Conheça o Projeto</a>
+            </div>
+        </section>
+
+        <section class="destaques">
+            <h2 class="titulo-destaques">O Projeto em Resumo</h2>
+            <article class="card-info">
+                <span class="card-icone">
+                    <img src="assets/pixel1.png" alt="">
+                </span>
+                <h3>Descrição</h3>
+                <p>O Firefly é uma plataforma de apoio à tomada de decisão em operações de emergência e resgate.
+                    Utilizando análise preditiva baseada em Processo de Decisão de Markov (MDP), o sistema avalia dados
+                    em tempo real sobre vítimas, clima, localização e recursos para recomendar as ações mais seguras em
+                    cenários de alta imprevisibilidade.</p>
+            </article>
+
+            <article class="card-info">
+                <span class="card-icone">
+                    <img src="assets/pixel2.png" alt="">
+                </span>
+                <h3>Objetivo</h3>
+                <p>Auxiliar operadores a tomarem decisões rápidas, seguras e eficientes sob estresse. O foco é
+                    transformar a incerteza do ambiente em recomendações estruturadas que otimizem o tempo de resposta,
+                    mitiguem o erro humano e garantam a segurança das equipes de salvamento em campo.</p>
+            </article>
+
+            <article class="card-info">
+                <span class="card-icone">
+                    <img src="assets/pixel3.png" alt="">
+                </span>
+                <h3>Diferencial</h3>
+                <p>A transformação de cenários caóticos em um modelo matemático estruturado. Em vez de análises
+                    isoladas, o Firefly cruza dinamicamente 5 variáveis críticas em tempo real através de um sistema
+                    inteligente de pontuação e penalidades, gerando previsibilidade onde os modelos tradicionais falham.
+                </p>
+            </article>
+
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Firefly - Global Solution. Todos os direitos reservados.</p>

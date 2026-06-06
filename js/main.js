@@ -1,145 +1,180 @@
+// Faz uma sombra quando desde a página
 
-// ANIMAÇÃO DE SCROLL
+const header = document.querySelector(".cabecalho-principal");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visivel');
+
+    window.addEventListener("scroll", () => {
+        
+        if (window.scrollY > 50) {
+            header.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
+        } else {
+            header.style.boxShadow = "none";
         }
     });
-}, { threshold: 0.15 });
 
-document.querySelectorAll('.about, .menu, .secao-sobre, .numeros, .cta-section, .secao-simulacao').forEach(el => {
-    observer.observe(el);
+// Funcionalidade do FAQ
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+    question.addEventListener("click", () => {
+        const item = question.parentElement;
+        
+        document.querySelectorAll(".faq-item").forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove("active");
+            }
+        });
+
+        item.classList.toggle("active");
+    });
 });
 
+// formulário
 
-// ACCORDION FAQ
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById('form-contato');
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const mensagem = document.getElementById('mensagem');
+    
+    const msgErro = document.getElementById('msg-erro');
+    const msgSucesso = document.getElementById('msg-sucesso');
+    
+    const span1 = document.getElementById('span1');
+    const span2 = document.getElementById('span2');
+    const span3 = document.getElementById('span3');
 
-document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const jaAberto = item.classList.contains('aberto');
+    // Constante sobre nome composto para validação
+    const regexNomeComposto = /^[A-Za-zÀ-ÖØ-öø-ÿ]+(\s+[A-Za-zÀ-ÖØ-öø-ÿ]+)+$/;
 
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('aberto'));
+    // Estilização do span
+    function gerenciarEstiloSpan(span, textoErro) {
+        if (textoErro) {
+            span.textContent = textoErro;
+            span.style.display = 'block';
+            span.style.backgroundColor = '#f8d7da';
+            span.style.color = '#721c24';
+            span.style.border = '1px solid #f5c6cb';
+            span.style.padding = '8px';
+            span.style.borderRadius = '4px';
+            span.style.marginTop = '5px';
+            span.style.fontSize = '0.85rem';
+        } else {
+            span.textContent = '';
+            span.style.display = 'none';
+        }
+    }
 
-        if (!jaAberto) item.classList.add('aberto');
+    // Função para verificar se a caixa de erro grande deve sumir antes do envio
+    function checarEFecharErroGlobal() {
+        const nomeVal = nome.value.trim();
+        const emailVal = email.value.trim();
+        const mensagemVal = mensagem.value.trim();
+
+        if (
+            nomeVal && emailVal && mensagemVal && 
+            regexNomeComposto.test(nomeVal) && 
+            emailVal.includes('@') && emailVal.includes('.') &&
+            validarTamanhoMensagem(mensagemVal)
+        ) {
+            msgErro.style.display = 'none';
+        }
+    }
+
+    // --- Validações ao sair do campo (Blur) ---
+    nome.addEventListener('blur', () => {
+        const nomeVal = nome.value.trim();
+        if (nomeVal === "") {
+            gerenciarEstiloSpan(span1, 'O nome é obrigatório!');
+        } else if (!regexNomeComposto.test(nomeVal)) {
+            gerenciarEstiloSpan(span1, 'Por favor, insira seu nome completo (nome e sobrenome).');
+        } else {
+            gerenciarEstiloSpan(span1, '');
+            checarEFecharErroGlobal();
+        }
     });
-});
 
-
-// MENU HAMBÚRGUER
-const hamburger = document.getElementById('hamburger');
-const navbar = document.querySelector('.navbar');
-
-if (hamburger && navbar) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('ativo');
-        navbar.classList.toggle('aberto');
+    email.addEventListener('blur', () => {
+        const emailVal = email.value.trim();
+        if (emailVal === "") {
+            gerenciarEstiloSpan(span2, 'O e-mail é obrigatório!');
+        } else if (!emailVal.includes('@') || !emailVal.includes('.')) {
+            gerenciarEstiloSpan(span2, 'Por favor, insira um e-mail válido.');
+        } else {
+            gerenciarEstiloSpan(span2, '');
+            checarEFecharErroGlobal();
+        }
     });
 
-    navbar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('ativo');
-            navbar.classList.remove('aberto');
+    mensagem.addEventListener('blur', () => {
+        const mensagemVal = mensagem.value.trim();
+        if (mensagemVal === "") {
+            gerenciarEstiloSpan(span3, 'A mensagem é obrigatória!');
+        } else if (!validarTamanhoMensagem(mensagemVal)) {
+            gerenciarEstiloSpan(span3, 'Sua mensagem deve ser mais detalhada (mínimo de 30 caracteres)');
+        } else {
+            gerenciarEstiloSpan(span3, '');
+            checarEFecharErroGlobal();
+        }
+    });
+
+    // Conta os caracteres 
+    function validarTamanhoMensagem(texto) {
+        const textoLimpo = texto.trim();
+        //Checagem por caracteres
+        const temBastanteCaracteres = textoLimpo.length >= 30;
+        return temBastanteCaracteres
+    }
+
+    // --- Validação no Envio (Submit) ---
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nomeVal = nome.value.trim();
+            const emailVal = email.value.trim();
+            const mensagemVal = mensagem.value.trim();
+            
+            // Reseta os alertas principais
+            msgErro.style.display = 'none';
+            msgSucesso.style.display = 'none';
+
+            // Verifica campos vazios
+            if (!nomeVal || !emailVal || !mensagemVal) {
+                msgErro.textContent = "Erro: Todos os campos são obrigatórios.";
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            // Verifica se o nome é composto
+            if (!regexNomeComposto.test(nomeVal)) {
+                msgErro.textContent = "Erro: Por favor, preencha seu nome completo.";
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            // Verifica email válido
+            if (!emailVal.includes('@') || !emailVal.includes('.')) {
+                msgErro.textContent = "Erro: Por favor, insira um e-mail válido.";
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            // Verifica se a mensagem contém uma frase válida
+            if (!validarTamanhoMensagem(mensagemVal)) {
+                msgErro.textContent = "Erro: A mensagem precisa ser mais detalhada (mínimo de 30 caracteres).";
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            gerenciarEstiloSpan(span1, '');
+            gerenciarEstiloSpan(span2, '');
+            gerenciarEstiloSpan(span3, '');
+
+            msgSucesso.style.display = 'block';
+            form.reset();
+            console.log("Formulário do Lobo-guará Tech enviado com sucesso!");
         });
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
-            hamburger.classList.remove('ativo');
-            navbar.classList.remove('aberto');
-        }
-    });
-}
-
-
-
-// VALIDAÇÃO DO FORMULÁRIO
-const form = document.getElementById('form-contato');
-
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const nome = document.getElementById('nome');
-        const email = document.getElementById('email');
-        const mensagem = document.getElementById('mensagem');
-        const msgErro = document.getElementById('msg-erro');
-        const msgSucesso = document.getElementById('msg-sucesso');
-
-        // Limpa estados anteriores
-        [nome, email, mensagem].forEach(c => {
-            c.classList.remove('campo-erro');
-            const span = c.parentElement.querySelector('span');
-            if (span) span.textContent = '';
-        });
-        msgErro.classList.add('hidden');
-        msgSucesso.classList.add('hidden');
-
-        let valido = true;
-
-        if (!nome.value.trim()) {
-            nome.classList.add('campo-erro');
-            const span = document.getElementById('span1');
-            if (span) span.textContent = 'Por favor, insira seu nome.';
-            valido = false;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email.value.trim()) {
-            email.classList.add('campo-erro');
-            const span = document.getElementById('span2');
-            if (span) span.textContent = 'Por favor, insira seu e-mail.';
-            valido = false;
-        } else if (!emailRegex.test(email.value)) {
-            email.classList.add('campo-erro');
-            const span = document.getElementById('span2');
-            if (span) span.textContent = 'Insira um e-mail válido.';
-            valido = false;
-        }
-
-        if (!mensagem.value.trim()) {
-            mensagem.classList.add('campo-erro');
-            const span = document.getElementById('span3');
-            if (span) span.textContent = 'Por favor, escreva sua mensagem.';
-            valido = false;
-        }
-
-        if (!valido) {
-            msgErro.textContent = 'Preencha todos os campos obrigatórios.';
-            msgErro.classList.remove('hidden');
-            return;
-        }
-
-        msgSucesso.classList.remove('hidden');
-        form.reset();
-
-        setTimeout(() => {
-            msgSucesso.classList.add('hidden');
-        }, 5000);
-    });
-
-    // Feedback em tempo real
-    form.querySelectorAll('input, textarea').forEach(campo => {
-        campo.addEventListener('input', () => {
-            campo.classList.remove('campo-erro');
-            const span = campo.parentElement.querySelector('span');
-            if (span) span.textContent = '';
-        });
-    });
-}
-
-
-
-// LINK ATIVO NO MENU
-const links = document.querySelectorAll('.navbar a');
-const paginaAtual = window.location.pathname.split('/').pop();
-
-links.forEach(link => {
-    const hrefPagina = link.getAttribute('href').split('/').pop();
-    if (hrefPagina === paginaAtual || (paginaAtual === '' && hrefPagina === 'index.html')) {
-        link.classList.add('ativo');
     }
 });
-
