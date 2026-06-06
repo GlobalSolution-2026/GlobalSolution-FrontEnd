@@ -186,19 +186,16 @@ const elementos = document.querySelectorAll('.escondido');
 // 2. Cria o observador que vigia a tela
 const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(entrada => {
-        // Se o elemento estiver visível na tela do usuário
         if (entrada.isIntersecting) {
-            entrada.target.classList.add('mostrar'); // Adiciona a classe que mostra o conteúdo
+            entrada.target.classList.add('mostrar'); 
             
-            // Opcional: Descomente a linha abaixo se quiser que a animação aconteça APENAS UMA VEZ
-            // observador.unobserve(entrada.target); 
         } else {
-            // Opcional: Se quiser que o elemento suma de novo quando o usuário subir a página, mantenha esta linha:
+            
             entrada.target.classList.remove('mostrar');
         }
     });
 }, {
-    threshold: 0.15 // O elemento aparece quando 15% dele estiver visível na tela
+    threshold: 0.15 
 });
 
 // 3. Diz ao observador para vigiar cada um dos elementos selecionados
