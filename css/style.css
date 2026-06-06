@@ -474,8 +474,12 @@ footer {
 }
 
 .icone-pilar {
-    font-size: 2.8rem;
     margin-bottom: 1rem;
+}
+
+.icone-pilar img {
+    width: 220px;  /* Ajuste este valor (ex: 40px, 60px) até ficar do tamanho que você quer */
+    height: auto; /* Garante que a imagem não vai achatar ou esticar */
 }
 
 .card-pilar h3 {
