@@ -5,9 +5,9 @@
 /* Cores na regra 60/30/10 */
 
 :root {
-    --cor-dominante: #F4EEDD; 
-    --cor-secundaria: #D35400; 
-    --cor-acento: #1C1C1C; 
+    --cor-dominante: #FAF6F0; 
+    --cor-secundaria: #C62828;
+    --cor-acento: #3E2723; 
     --cor-fundo-card: #FFFFFF;
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -56,7 +56,7 @@ body {
 
 .cabecalho-principal h1 {
     font-size: 1.8rem;
-    color: var(--cor-secundaria);
+    color: var(--cor-dominante);
     font-weight: 700;
     font-family: "Pixelify Sans", sans-serif;
 }
@@ -478,7 +478,7 @@ footer {
 }
 
 .icone-pilar img {
-    width: 220px;  /* Ajuste este valor (ex: 40px, 60px) até ficar do tamanho que você quer */
+    width: 140px;  /* Ajuste este valor (ex: 40px, 60px) até ficar do tamanho que você quer */
     height: auto; /* Garante que a imagem não vai achatar ou esticar */
 }
 
