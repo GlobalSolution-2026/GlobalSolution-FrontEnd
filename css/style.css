@@ -46,6 +46,17 @@ body {
     gap: 15px;
 }
 
+.logo a {
+    display: flex;
+    align-items: center; 
+    gap: 10px;             /* Espaçamento entre a imagem e o texto (ajuste como quiser) */
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    color: inherit;        /* Mantém a cor original do seu H1 */
+}
+
+.logo h1 {
+    margin: 0;
+}
 
 .cabecalho-principal .logo img {
     height: 60px;
@@ -59,6 +70,7 @@ body {
     color: var(--cor-dominante);
     font-weight: 700;
     font-family: "Pixelify Sans", sans-serif;
+    
 }
 
 .menu-navegacao ul {
@@ -816,4 +828,17 @@ footer {
         width: 100%;
         max-width: 320px;
     }
+}
+
+/* Estado inicial: Invisível e um pouco abaixo da posição original */
+.escondido {
+    opacity: 0;
+    transform: translateY(40px); /* Dá o efeito de que está subindo */
+    transition: all 0.8s ease-out; /* Controla a suavidade e o tempo (0.8 segundos) */
+}
+
+/* Estado ativo: Visível e na posição correta */
+.escondido.mostrar {
+    opacity: 1;
+    transform: translateY(0);
 }
