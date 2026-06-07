@@ -200,3 +200,263 @@ const observador = new IntersectionObserver((entradas) => {
 
 // 3. Diz ao observador para vigiar cada um dos elementos selecionados
 elementos.forEach(elemento => observador.observe(elemento));
+
+const PESOS = {
+
+    /* Estado de saúde inicial da vítima */
+    gravidade: {
+        "estavel":  10,
+        "grave":    30,
+        "critico":  50
+    },
+
+    /* Faixa etária — componente de urgência */
+    faixaEtaria: {
+        "adulto":  5,
+        "crianca": 15,
+        "idoso":   15
+    },
+
+    /* Clima — cada sub-variável vale de 1 (leve) a 3 (extremo) */
+    clima: {
+        precipitacao: {
+            "sem_chuva":      1,
+            "chuva_leve":     1,
+            "chuva_moderada": 2,
+            "tempestade":     3
+        },
+        visibilidade: {
+            "alta":  1,
+            "baixa": 2,
+            "nula":  3
+        },
+        vento: {
+            "sem_vento": 1,
+            "leve":      1,
+            "moderado":  2,
+            "forte":     3
+        }
+    },
+
+    /* Localização — terreno e comunicação, cada um de 1 a 3 */
+    localizacao: {
+        terreno: {
+            "urbana":   1,
+            "floresta": 2,
+            "montanha": 2,
+            "alagada":  3
+        },
+        comunicacao: {
+            "parcial":       1,
+            "sem_cobertura": 2,
+            "isolada":       3
+        }
+    }
+};
+
+
+/* ================================================================
+   PENALIDADES
+   Subtraídas da pontuação final por decisões incoerentes.
+   Altere os valores para calibrar cada tipo de penalidade.
+================================================================ */
+
+const PENALIDADES = {
+    "equipe":     20,   /* RN18 — equipe inadequada ao terreno */
+    "tecnologia": 15,   /* RN15 — tecnologia incoerente ao cenário */
+    "vitima":     25,   /* atraso no acionamento em estado crítico */
+    "operador":   10    /* RN20 — taxa de acerto baixa acumulada */
+};
+
+
+/* ================================================================
+   CLASSIFICAÇÃO FINAL
+   Define as faixas de pontuação e o status da missão.
+   Altere os valores de "ate" para mudar os limites de cada faixa.
+================================================================ */
+
+const CLASSIFICACAO = [
+    {
+        ate: 60,
+        label: "RISCO BAIXO",
+        icone: "🟢",
+        cor: "#2E7D32",
+        interpretacao: (base, pen) =>
+            `Cenário com <strong>baixo risco</strong>. Pontuação base: ${base} pts. ` +
+            `${pen > 0 ? `Penalidades aplicadas: −${pen} pts.` : 'Sem penalidades.'} ` +
+            `Operador tem margem para planejar com cuidado.`
+    },
+    {
+        ate: 120,
+        label: "RISCO MODERADO",
+        icone: "🟡",
+        cor: "#F9A825",
+        interpretacao: (base, pen) =>
+            `Cenário com <strong>risco moderado</strong>. Pontuação base: ${base} pts. ` +
+            `${pen > 0 ? `Penalidades: −${pen} pts comprometem o resultado.` : 'Sem penalidades — bom sinal.'} ` +
+            `Cada decisão conta para definir Sucesso ou Fracasso.`
+    },
+    {
+        ate: Infinity,
+        label: "RISCO ALTO",
+        icone: "🔴",
+        cor: "#C62828",
+        interpretacao: (base, pen) =>
+            `Cenário de <strong>alto risco</strong>. Pontuação base: ${base} pts. ` +
+            `${pen > 0 ? `Penalidades de −${pen} pts agravam o cenário.` : 'Nenhuma penalidade — mas o ambiente é hostil.'} ` +
+            `Margem mínima: qualquer erro pode levar ao Fracasso.`
+    }
+];
+
+
+/* ================================================================
+   PONTUAÇÃO MÁXIMA PARA A BARRA VISUAL
+   Máximo teórico: (50 + 15) × (1.8 + 2.0) = 247 → arredondado para 250
+================================================================ */
+
+const MAX_PONTUACAO = 250;
+
+
+/* ================================================================
+   FUNÇÃO DE CÁLCULO — RF21
+   Fórmula: (Gravidade + Urgência) × (MultClima + MultLocalização) − Penalidades
+================================================================ */
+
+function calcularPontuacao(estado) {
+
+    /* Componente 1: Gravidade */
+    const pontoGravidade = PESOS.gravidade[estado.gravidade] ?? 0;
+
+    /* Componente 2: Urgência (faixa etária) */
+    const pontoFaixa = PESOS.faixaEtaria[estado.faixa] ?? 0;
+
+    const subtotal = pontoGravidade + pontoFaixa;
+
+    /* Multiplicador de Clima
+       Média dos três escores (1–3) convertida para escala 1.0–1.8 */
+    const escorePrecip = PESOS.clima.precipitacao[estado.precipitacao] ?? 1;
+    const escoreVisib  = PESOS.clima.visibilidade[estado.visibilidade] ?? 1;
+    const escoreVento  = PESOS.clima.vento[estado.vento] ?? 1;
+    const mediaClima   = (escorePrecip + escoreVisib + escoreVento) / 3;
+    const multClima    = parseFloat((1.0 + (mediaClima - 1) * (0.8 / 2)).toFixed(2));
+
+    /* Multiplicador de Localização
+       Média dos dois escores (1–3) convertida para escala 1.0–2.0 */
+    const escoreTerreno = PESOS.localizacao.terreno[estado.terreno] ?? 1;
+    const escoreComun   = PESOS.localizacao.comunicacao[estado.comunicacao] ?? 1;
+    const mediaLoc      = (escoreTerreno + escoreComun) / 2;
+    const multLoc       = parseFloat((1.0 + (mediaLoc - 1) * (1.0 / 2)).toFixed(2));
+
+    const multTotal = parseFloat((multClima + multLoc).toFixed(2));
+
+    /* Pontuação base (antes de penalidades) */
+    const pontuacaoBase = Math.round(subtotal * multTotal);
+
+    /* Penalidades */
+    const totalPenalidades = estado.penalidades.reduce(
+        (acc, tipo) => acc + (PENALIDADES[tipo] ?? 0), 0
+    );
+
+    /* Pontuação final */
+    const pontuacaoFinal = Math.max(0, pontuacaoBase - totalPenalidades);
+
+    /* Classificação */
+    const classif = CLASSIFICACAO.find(c => pontuacaoFinal <= c.ate);
+
+    return {
+        pontoGravidade,
+        pontoFaixa,
+        subtotal,
+        multClima,
+        multLoc,
+        multTotal,
+        pontuacaoBase,
+        totalPenalidades,
+        pontuacaoFinal,
+        classif,
+        formulaTexto:
+            `(${pontoGravidade} + ${pontoFaixa}) × (${multClima} + ${multLoc})` +
+            (totalPenalidades > 0 ? ` − ${totalPenalidades}` : '') +
+            ` = <strong>${pontuacaoFinal}</strong>`
+    };
+}
+
+
+/* ================================================================
+   LEITURA DO DOM E ATUALIZAÇÃO DO SIMULADOR
+================================================================ */
+
+function lerEstadoDoDOM() {
+    const radio = (name) => {
+        const el = document.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : null;
+    };
+
+    const penalidades = Array.from(
+        document.querySelectorAll('input[name="penalidade"]:checked')
+    ).map(cb => cb.value);
+
+    return {
+        gravidade:    radio('gravidade')    || 'estavel',
+        faixa:        radio('faixa')        || 'adulto',
+        precipitacao: radio('precipitacao') || 'sem_chuva',
+        visibilidade: radio('visibilidade') || 'alta',
+        vento:        radio('vento')        || 'sem_vento',
+        terreno:      radio('terreno')      || 'urbana',
+        comunicacao:  radio('comunicacao')  || 'parcial',
+        penalidades
+    };
+}
+
+function atualizarSimulador() {
+    const estado = lerEstadoDoDOM();
+    const r = calcularPontuacao(estado);
+
+    /* Passos do cálculo */
+    document.getElementById('val-gravidade').textContent   = `+${r.pontoGravidade}`;
+    document.getElementById('val-faixa').textContent       = `+${r.pontoFaixa}`;
+    document.getElementById('val-subtotal').textContent    = r.subtotal;
+    document.getElementById('val-clima').textContent       = `×${r.multClima}`;
+    document.getElementById('val-localizacao').textContent = `×${r.multLoc}`;
+    document.getElementById('val-mult-soma').textContent   = `×${r.multTotal}`;
+    document.getElementById('val-base').textContent        = r.pontuacaoBase;
+    document.getElementById('val-penalidades').textContent =
+        r.totalPenalidades > 0 ? `−${r.totalPenalidades}` : '−0';
+
+    /* Pontuação final e cor */
+    document.getElementById('pontuacao-final').textContent = r.pontuacaoFinal;
+    document.getElementById('pontuacao-final').style.color = r.classif.cor;
+
+    /* Barra de progresso */
+    const pct = Math.min(100, Math.round((r.pontuacaoFinal / MAX_PONTUACAO) * 100));
+    const barra = document.getElementById('barra-fill');
+    barra.style.width           = pct + '%';
+    barra.style.backgroundColor = r.classif.cor;
+
+    /* Status */
+    document.getElementById('status-icone').textContent = r.classif.icone;
+    document.getElementById('status-texto').textContent = r.classif.label;
+
+    /* Fórmula e interpretação */
+    document.getElementById('formula-texto').innerHTML       = r.formulaTexto;
+    document.getElementById('interpretacao-texto').innerHTML =
+        r.classif.interpretacao(r.pontuacaoBase, r.totalPenalidades);
+}
+
+
+/* ================================================================
+   INICIALIZAÇÃO
+================================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const todosInputs = document.querySelectorAll(
+        '.simulador-controles input[type="radio"], ' +
+        '.simulador-controles input[type="checkbox"]'
+    );
+
+    todosInputs.forEach(input => {
+        input.addEventListener('change', atualizarSimulador);
+    });
+
+    atualizarSimulador();
+});

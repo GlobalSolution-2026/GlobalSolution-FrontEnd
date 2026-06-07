@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');    /* Será que eu posso usar uma fonte externa da Google? */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap'); 
 
 
 /* Cores na regra 60/30/10 */
@@ -9,6 +9,15 @@
     --cor-secundaria: #C62828;
     --cor-acento: #3E2723; 
     --cor-fundo-card: #FFFFFF;
+    --gravidade-cor:   #C62828;   /* vermelho — urgência máxima de vítima    */
+    --faixa-cor:       #7B3F00;   /* marrom — tom terra, humano              */
+    --clima-cor:       #1565C0;   /* azul — céu e clima                      */
+    --localizacao-cor: #2E7D32;   /* verde — terreno e natureza              */
+    --penalidade-cor:  #E65100;   /* laranja escuro — alerta de erro         */
+    --verde:           #2E7D32;
+    --amarelo:         #F9A825;
+    --vermelho:        #C62828;
+    --raio:            12px;
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -737,6 +746,438 @@ footer {
     border: 1px solid #c3e6cb;
 }
 
+/* Pontuação - Revisar*/
+
+/* ── CONTAINER ────────────────────────────────────────────────────── */
+
+.container-pontuacao {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 5% 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* ── INTRODUÇÃO ───────────────────────────────────────────────────── */
+
+.intro-pontuacao {
+    text-align: center;
+}
+
+.intro-pontuacao span.tag-projeto {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.intro-pontuacao h2 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 2.5rem;
+    color: var(--cor-acento);
+    margin-bottom: 1rem;
+}
+
+.intro-pontuacao > p {
+    max-width: 680px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.05rem;
+    color: var(--cor-acento);
+    opacity: 0.85;
+}
+
+/* ── FÓRMULA ──────────────────────────────────────────────────────── */
+
+.formula-destaque {
+    background-color: var(--cor-acento);
+    border-radius: var(--raio);
+    padding: 2rem 2.5rem;
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.formula-linha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.formula-parte {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.formula-parte.gravidade   { background-color: var(--gravidade-cor); }
+.formula-parte.urgencia    { background-color: var(--faixa-cor); }
+.formula-parte.clima       { background-color: var(--clima-cor); }
+.formula-parte.localizacao { background-color: var(--localizacao-cor); }
+
+.formula-operador {
+    color: var(--cor-dominante);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.formula-parentese {
+    color: var(--cor-secundaria);
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.formula-fonte {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.8rem;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ── TÍTULO DE SEÇÃO ──────────────────────────────────────────────── */
+
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    color: var(--cor-acento);
+    margin-bottom: 0.5rem;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.numero-secao {
+    background-color: var(--cor-secundaria);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--fonte-principal);
+}
+
+.desc-secao {
+    color: var(--cor-acento);
+    opacity: 0.75;
+    margin-bottom: 2rem;
+    max-width: 720px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ── SIMULADOR ────────────────────────────────────────────────────── */
+
+.simulador-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.simulador-controles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.grupo-sim {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    background: var(--cor-fundo-card);
+}
+
+.grupo-sim legend {
+    font-weight: bold;
+    color: var(--cor-acento);
+    font-size: 0.9rem;
+    padding: 0 0.4rem;
+}
+
+.grupo-penalidades {
+    border-color: rgba(198, 40, 40, 0.3);
+}
+
+.grupo-penalidades legend {
+    color: var(--penalidade-cor);
+}
+
+.radio-sim,
+.check-sim {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.35rem 0;
+    font-size: 0.92rem;
+    color: var(--cor-acento);
+}
+
+.radio-sim em,
+.check-sim em {
+    color: var(--cor-secundaria);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.radio-sim input[type="radio"],
+.check-sim input[type="checkbox"] {
+    accent-color: var(--cor-secundaria);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* ── PAINEL DE RESULTADO ──────────────────────────────────────────── */
+
+.simulador-resultado {
+    background: var(--cor-acento);
+    border-radius: var(--raio);
+    padding: 2rem;
+    color: var(--cor-dominante);
+    position: sticky;
+    top: 1rem;
+}
+
+.simulador-resultado h4 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 1.2rem;
+    color: var(--cor-dominante);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 0.8rem;
+}
+
+/* ── PASSOS DO CÁLCULO ────────────────────────────────────────────── */
+
+.calculo-passos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.passo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    background: rgba(255,255,255,0.06);
+}
+
+.passo-label {
+    flex: 1;
+    color: rgba(255,255,255,0.75);
+}
+
+.passo-label.gravidade-cor   { color: #ef9a9a; }
+.passo-label.faixa-cor       { color: #ffcc80; }
+.passo-label.clima-cor       { color: #90caf9; }
+.passo-label.localizacao-cor { color: #a5d6a7; }
+.passo-label.penalidade-cor  { color: #ffab91; }
+
+.passo-valor {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    min-width: 50px;
+    text-align: right;
+}
+
+.passo-soma {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.passo-base {
+    background: rgba(198, 40, 40, 0.3);
+    border: 1px solid rgba(198,40,40,0.4);
+}
+
+.passo-penalidade {
+    background: rgba(230,81,0,0.25);
+}
+
+/* ── RESULTADO FINAL ──────────────────────────────────────────────── */
+
+.resultado-final {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 1rem;
+}
+
+.pontuacao-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.pontuacao-numero {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--cor-secundaria);
+    transition: color 0.4s ease;
+    font-family: "Pixelify Sans", sans-serif;
+    line-height: 1;
+}
+
+.pontuacao-unidade {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+}
+
+.medidor-barra {
+    height: 10px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.barra-preenchimento {
+    height: 100%;
+    border-radius: 20px;
+    width: 10%;
+    background-color: var(--verde);
+    transition: width 0.5s ease, background-color 0.4s ease;
+}
+
+.status-missao {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.4s ease;
+}
+
+.resultado-formula-texto {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+
+.interpretacao {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+}
+
+.interpretacao strong {
+    color: #fff;
+}
+
+/* ── CLASSIFICAÇÃO ────────────────────────────────────────────────── */
+
+.grade-classificacao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card-classificacao {
+    background: var(--cor-fundo-card);
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.class-faixa {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.8rem 1.2rem 0 1.2rem;
+    color: #888;
+}
+
+.class-icone {
+    font-size: 2.5rem;
+    padding: 0.5rem 1.2rem;
+    line-height: 1;
+}
+
+.class-nome {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 1.2rem 0.5rem 1.2rem;
+    color: var(--cor-acento);
+}
+
+.class-desc {
+    font-size: 0.88rem;
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    color: #555;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.class-visual {
+    height: 6px;
+    margin-top: auto;
+}
+
+.verde-bar    { background-color: var(--verde); }
+.amarelo-bar  { background-color: var(--amarelo); }
+.vermelho-bar { background-color: var(--vermelho); }
+
+/* ── NOTA TAXA DE ACERTO ──────────────────────────────────────────── */
+
+.nota-taxa-acerto {
+    background: var(--cor-fundo-card);
+    border-left: 4px solid var(--cor-secundaria);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.nota-icone {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.nota-taxa-acerto p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--cor-acento);
+    line-height: 1.6;
+}
 
 /* Resposividade */
 
@@ -770,6 +1211,18 @@ footer {
 
     .secao-sobre h2 {
         font-size: 1.8rem;
+    }
+
+    .simulador-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .simulador-resultado {
+        position: static;
+    }
+
+    .grade-classificacao {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -805,6 +1258,28 @@ footer {
         width: 38px; 
         height: 38px; 
         top: 10px; 
+    }
+    .formula-linha {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formula-parte {
+        text-align: center;
+        width: 100%;
+    }
+
+    .formula-operador,
+    .formula-parentese {
+        display: none;
+    }
+
+    .pontuacao-numero {
+        font-size: 3rem;
+    }
+
+    .titulo-secao {
+        font-size: 1.4rem;
     }
 }
 
