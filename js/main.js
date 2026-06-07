@@ -279,7 +279,6 @@ const CLASSIFICACAO = [
     {
         ate: 60,
         label: "RISCO BAIXO",
-        icone: "🟢",
         cor: "#2E7D32",
         interpretacao: (base, pen) =>
             `Cenário com <strong>baixo risco</strong>. Pontuação base: ${base} pts. ` +
@@ -289,7 +288,6 @@ const CLASSIFICACAO = [
     {
         ate: 120,
         label: "RISCO MODERADO",
-        icone: "🟡",
         cor: "#F9A825",
         interpretacao: (base, pen) =>
             `Cenário com <strong>risco moderado</strong>. Pontuação base: ${base} pts. ` +
@@ -299,7 +297,6 @@ const CLASSIFICACAO = [
     {
         ate: Infinity,
         label: "RISCO ALTO",
-        icone: "🔴",
         cor: "#C62828",
         interpretacao: (base, pen) =>
             `Cenário de <strong>alto risco</strong>. Pontuação base: ${base} pts. ` +

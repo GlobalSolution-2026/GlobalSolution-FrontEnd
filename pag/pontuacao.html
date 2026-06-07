@@ -25,10 +25,11 @@
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="solucao.html">Nossa Solução</a></li>
+                <li><a href="pontuacao.html" class="ativo">Pontuação</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="integrantes.html">Integrantes</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="pontuacao.html" class="ativo">Pontuação</a></li>
+
             </ul>
         </nav>
     </header>
@@ -40,7 +41,8 @@
             <span class="tag-projeto">Sistema de Avaliação</span>
             <h2>Como a Pontuação Funciona</h2>
             <p>Cada missão recebe uma pontuação calculada automaticamente com base nas variáveis do cenário e nas
-                decisões tomadas pelo operador. Use o simulador abaixo para montar um cenário e ver o resultado em tempo real.</p>
+                decisões tomadas pelo operador. Use o simulador abaixo para montar um cenário e ver o resultado em tempo
+                real.</p>
 
             <div class="formula-destaque">
                 <div class="formula-linha">
@@ -63,158 +65,179 @@
                 <span class="numero-secao">01</span>
                 Simulador de Cenário
             </h3>
-            <p class="desc-secao">Selecione as variáveis e veja o cálculo sendo montado em tempo real,
-                exatamente como o sistema faria.</p>
+            
 
             <div class="simulador-wrapper">
 
+                <!-- GRADE DE CONTROLES -->
                 <div class="simulador-controles">
 
-                    <fieldset class="grupo-sim">
-                        <legend>🩺 Gravidade da Vítima</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="gravidade" value="estavel" checked>
-                            <span class="radio-label">Estável <em>(+10)</em></span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="gravidade" value="grave">
-                            <span class="radio-label">Grave <em>(+30)</em></span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="gravidade" value="critico">
-                            <span class="radio-label">Crítico <em>(+50)</em></span>
-                        </label>
-                    </fieldset>
+                    <div class="grade-controles">
 
-                    <fieldset class="grupo-sim">
-                        <legend>👥 Faixa Etária</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="faixa" value="adulto" checked>
-                            <span class="radio-label">Adulto <em>(+5)</em></span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="faixa" value="crianca">
-                            <span class="radio-label">Criança <em>(+15)</em></span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="faixa" value="idoso">
-                            <span class="radio-label">Idoso <em>(+15)</em></span>
-                        </label>
-                    </fieldset>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Gravidade da Vítima
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="gravidade" value="estavel" checked>
+                                <span class="radio-label">Estável <em>(+10)</em></span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="gravidade" value="grave">
+                                <span class="radio-label">Grave <em>(+30)</em></span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="gravidade" value="critico">
+                                <span class="radio-label">Crítico <em>(+50)</em></span>
+                            </label>
+                        </fieldset>
 
-                    <fieldset class="grupo-sim">
-                        <legend>🌧️ Precipitação</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="precipitacao" value="sem_chuva" checked>
-                            <span class="radio-label">Sem chuva</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="precipitacao" value="chuva_leve">
-                            <span class="radio-label">Chuva leve</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="precipitacao" value="chuva_moderada">
-                            <span class="radio-label">Chuva moderada</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="precipitacao" value="tempestade">
-                            <span class="radio-label">Tempestade</span>
-                        </label>
-                    </fieldset>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Faixa Etária
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="faixa" value="adulto" checked>
+                                <span class="radio-label">Adulto <em>(+5)</em></span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="faixa" value="crianca">
+                                <span class="radio-label">Criança <em>(+15)</em></span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="faixa" value="idoso">
+                                <span class="radio-label">Idoso <em>(+15)</em></span>
+                            </label>
+                        </fieldset>
 
-                    <fieldset class="grupo-sim">
-                        <legend>👁️ Visibilidade</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="visibilidade" value="alta" checked>
-                            <span class="radio-label">Alta visibilidade</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="visibilidade" value="baixa">
-                            <span class="radio-label">Baixa visibilidade</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="visibilidade" value="nula">
-                            <span class="radio-label">Nula (nevoeiro)</span>
-                        </label>
-                    </fieldset>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Precipitação
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="precipitacao" value="sem_chuva" checked>
+                                <span class="radio-label">Sem chuva</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="precipitacao" value="chuva_leve">
+                                <span class="radio-label">Chuva leve</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="precipitacao" value="chuva_moderada">
+                                <span class="radio-label">Chuva moderada</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="precipitacao" value="tempestade">
+                                <span class="radio-label">Tempestade</span>
+                            </label>
+                        </fieldset>
 
-                    <fieldset class="grupo-sim">
-                        <legend>💨 Vento</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="vento" value="sem_vento" checked>
-                            <span class="radio-label">Sem vento</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="vento" value="leve">
-                            <span class="radio-label">Leve</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="vento" value="moderado">
-                            <span class="radio-label">Moderado</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="vento" value="forte">
-                            <span class="radio-label">Forte</span>
-                        </label>
-                    </fieldset>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Visibilidade
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="visibilidade" value="alta" checked>
+                                <span class="radio-label">Alta visibilidade</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="visibilidade" value="baixa">
+                                <span class="radio-label">Baixa visibilidade</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="visibilidade" value="nula">
+                                <span class="radio-label">Nula (nevoeiro)</span>
+                            </label>
+                        </fieldset>
 
-                    <fieldset class="grupo-sim">
-                        <legend>🗺️ Tipo de Terreno</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="terreno" value="urbana" checked>
-                            <span class="radio-label">Urbana</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="terreno" value="floresta">
-                            <span class="radio-label">Floresta Densa</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="terreno" value="montanha">
-                            <span class="radio-label">Montanha</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="terreno" value="alagada">
-                            <span class="radio-label">Área Alagada</span>
-                        </label>
-                    </fieldset>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Vento
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="vento" value="sem_vento" checked>
+                                <span class="radio-label">Sem vento</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="vento" value="leve">
+                                <span class="radio-label">Leve</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="vento" value="moderado">
+                                <span class="radio-label">Moderado</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="vento" value="forte">
+                                <span class="radio-label">Forte</span>
+                            </label>
+                        </fieldset>
 
-                    <fieldset class="grupo-sim">
-                        <legend>📡 Comunicação</legend>
-                        <label class="radio-sim">
-                            <input type="radio" name="comunicacao" value="parcial" checked>
-                            <span class="radio-label">Cobertura parcial</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="comunicacao" value="sem_cobertura">
-                            <span class="radio-label">Sem cobertura</span>
-                        </label>
-                        <label class="radio-sim">
-                            <input type="radio" name="comunicacao" value="isolada">
-                            <span class="radio-label">Totalmente isolada</span>
-                        </label>
-                    </fieldset>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Tipo de Terreno
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="terreno" value="urbana" checked>
+                                <span class="radio-label">Urbana</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="terreno" value="floresta">
+                                <span class="radio-label">Floresta Densa</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="terreno" value="montanha">
+                                <span class="radio-label">Montanha</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="terreno" value="alagada">
+                                <span class="radio-label">Área Alagada</span>
+                            </label>
+                        </fieldset>
 
-                    <fieldset class="grupo-sim grupo-penalidades">
-                        <legend>⚠️ Penalidades Aplicadas</legend>
-                        <label class="check-sim">
-                            <input type="checkbox" name="penalidade" value="equipe">
-                            <span class="check-label">Equipe inadequada <em>(−20)</em></span>
-                        </label>
-                        <label class="check-sim">
-                            <input type="checkbox" name="penalidade" value="tecnologia">
-                            <span class="check-label">Tecnologia incoerente <em>(−15)</em></span>
-                        </label>
-                        <label class="check-sim">
-                            <input type="checkbox" name="penalidade" value="vitima">
-                            <span class="check-label">Atraso no acionamento <em>(−25)</em></span>
-                        </label>
-                        <label class="check-sim">
-                            <input type="checkbox" name="penalidade" value="operador">
-                            <span class="check-label">Taxa de acerto baixa <em>(−10)</em></span>
-                        </label>
-                    </fieldset>
-                </div>
+                        <fieldset class="grupo-sim">
+                            <legend>
+                                Comunicação
+                            </legend>
+                            <label class="radio-sim">
+                                <input type="radio" name="comunicacao" value="parcial" checked>
+                                <span class="radio-label">Cobertura parcial</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="comunicacao" value="sem_cobertura">
+                                <span class="radio-label">Sem cobertura</span>
+                            </label>
+                            <label class="radio-sim">
+                                <input type="radio" name="comunicacao" value="isolada">
+                                <span class="radio-label">Totalmente isolada</span>
+                            </label>
+                        </fieldset>
 
+                        <fieldset class="grupo-sim grupo-penalidades">
+                            <legend>
+                                Penalidades Aplicadas
+                            </legend>
+                            <label class="check-sim">
+                                <input type="checkbox" name="penalidade" value="equipe">
+                                <span class="check-label">Equipe inadequada <em>(−20)</em></span>
+                            </label>
+                            <label class="check-sim">
+                                <input type="checkbox" name="penalidade" value="tecnologia">
+                                <span class="check-label">Tecnologia incoerente <em>(−15)</em></span>
+                            </label>
+                            <label class="check-sim">
+                                <input type="checkbox" name="penalidade" value="vitima">
+                                <span class="check-label">Atraso no acionamento <em>(−25)</em></span>
+                            </label>
+                            <label class="check-sim">
+                                <input type="checkbox" name="penalidade" value="operador">
+                                <span class="check-label">Taxa de acerto baixa <em>(−10)</em></span>
+                            </label>
+                        </fieldset>
+
+                    </div><!-- /grade-controles -->
+                </div><!-- /simulador-controles -->
+
+                <!-- PAINEL DE RESULTADO (sticky à direita) -->
                 <div class="simulador-resultado">
                     <h4>Cálculo em Tempo Real</h4>
 
@@ -228,27 +251,27 @@
                             <span class="passo-valor" id="val-faixa">+5</span>
                         </div>
                         <div class="passo passo-soma">
-                            <span class="passo-label">Subtotal (Gravidade + Urgência)</span>
+                            <span class="passo-label">Subtotal</span>
                             <span class="passo-valor" id="val-subtotal">15</span>
                         </div>
                         <div class="passo">
-                            <span class="passo-label clima-cor">Multiplicador de Clima</span>
+                            <span class="passo-label clima-cor">Mult. Clima</span>
                             <span class="passo-valor" id="val-clima">×1.0</span>
                         </div>
                         <div class="passo">
-                            <span class="passo-label localizacao-cor">Multiplicador de Localização</span>
+                            <span class="passo-label localizacao-cor">Mult. Localização</span>
                             <span class="passo-valor" id="val-localizacao">×1.0</span>
                         </div>
                         <div class="passo passo-soma">
-                            <span class="passo-label">Soma dos Multiplicadores</span>
+                            <span class="passo-label">Soma Multiplicadores</span>
                             <span class="passo-valor" id="val-mult-soma">×2.0</span>
                         </div>
                         <div class="passo passo-base">
-                            <span class="passo-label">Pontuação Base (antes de penalidades)</span>
+                            <span class="passo-label">Pontuação Base</span>
                             <span class="passo-valor" id="val-base">30</span>
                         </div>
                         <div class="passo passo-penalidade">
-                            <span class="passo-label penalidade-cor">Total de Penalidades</span>
+                            <span class="passo-label penalidade-cor">Penalidades</span>
                             <span class="passo-valor" id="val-penalidades">−0</span>
                         </div>
                     </div>
@@ -258,16 +281,13 @@
                             <span class="pontuacao-numero" id="pontuacao-final">30</span>
                             <span class="pontuacao-unidade">pontos</span>
                         </div>
-
                         <div class="medidor-barra">
                             <div class="barra-preenchimento" id="barra-fill"></div>
                         </div>
-
                         <div class="status-missao" id="status-missao">
                             <span class="status-icone" id="status-icone">🟢</span>
                             <span class="status-texto" id="status-texto">RISCO BAIXO</span>
                         </div>
-
                         <p class="resultado-formula-texto" id="formula-texto">
                             (10 + 5) × (1.0 + 1.0) = <strong>30</strong>
                         </p>
@@ -280,7 +300,8 @@
                         </p>
                     </div>
                 </div>
-            </div>
+
+            </div><!-- /simulador-wrapper -->
         </section>
 
         <!-- SEÇÃO 3 — CLASSIFICAÇÃO -->
@@ -289,13 +310,14 @@
                 <span class="numero-secao">02</span>
                 Classificação da Missão
             </h3>
-            <p class="desc-secao">A pontuação final determina o status da missão e atualiza a taxa de acerto do
-                operador (RN20 / RF06).</p>
+
 
             <div class="grade-classificacao">
                 <div class="card-classificacao verde escondido">
                     <div class="class-faixa">0 – 60 pts</div>
-                    <div class="class-icone">🟢</div>
+                    <div class="class-icone">
+                        
+                    </div>
                     <div class="class-nome">Risco Baixo</div>
                     <div class="class-desc">Cenário controlado. Alta margem de erro tolerada.
                         Missão tende ao <strong>Sucesso</strong>.</div>
@@ -303,7 +325,9 @@
                 </div>
                 <div class="card-classificacao amarelo escondido">
                     <div class="class-faixa">61 – 120 pts</div>
-                    <div class="class-icone">🟡</div>
+                    <div class="class-icone">
+                      
+                    </div>
                     <div class="class-nome">Risco Moderado</div>
                     <div class="class-desc">Atenção às decisões. Penalidades podem definir
                         o resultado entre <strong>Sucesso</strong> e <strong>Fracasso</strong>.</div>
@@ -311,10 +335,13 @@
                 </div>
                 <div class="card-classificacao vermelho escondido">
                     <div class="class-faixa">121+ pts</div>
-                    <div class="class-icone">🔴</div>
+                    <div class="class-icone">
+                       
+                    </div>
                     <div class="class-nome">Risco Alto</div>
                     <div class="class-desc">Margem mínima. Qualquer penalidade pode levar ao
-                        <strong>Fracasso</strong>. Prioridade máxima de decisão.</div>
+                        <strong>Fracasso</strong>. Prioridade máxima de decisão.
+                    </div>
                     <div class="class-visual vermelho-bar"></div>
                 </div>
             </div>
@@ -335,4 +362,5 @@
     </footer>
 
 </body>
+
 </html>
