@@ -431,7 +431,6 @@ function atualizarSimulador() {
     barra.style.backgroundColor = r.classif.cor;
 
     /* Status */
-    document.getElementById('status-icone').textContent = r.classif.icone;
     document.getElementById('status-texto').textContent = r.classif.label;
 
     /* Fórmula e interpretação */
