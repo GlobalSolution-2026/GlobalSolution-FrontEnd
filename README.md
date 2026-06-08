@@ -2,7 +2,7 @@
 
 Sistema inteligente de apoio à tomada de decisão em operações de resgate e gerenciamento de emergências.
 
-## 📖 Sobre o Projeto
+## Sobre o Projeto
 
 O Firefly é uma plataforma desenvolvida para auxiliar equipes de resgate, bombeiros, SAMU e Defesa Civil na tomada de decisões em cenários de alta complexidade e imprevisibilidade.
 
@@ -20,7 +20,7 @@ A partir dessas informações, o Firefly gera recomendações para auxiliar os o
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Desenvolver uma ferramenta capaz de:
 
@@ -32,7 +32,7 @@ Desenvolver uma ferramenta capaz de:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 Para a construção desta interface moderna, responsiva e fluida, foram utilizadas as seguintes tecnologias e ferramentas:
 
