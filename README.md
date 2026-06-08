@@ -45,9 +45,7 @@ Para a construção desta interface moderna, responsiva e fluida, foram utilizad
 
 ---
 
-## 📂 Estrutura de Pastas do Projeto
-
-A arquitetura do projeto foi organizada para facilitar a manutenção, escalabilidade e separação dos recursos da aplicação.
+## 📁 Estrutura do Projeto
 
 ```text
 GLOBAL SOLUTION/
@@ -62,6 +60,16 @@ GLOBAL SOLUTION/
 │   ├── integrante04.jpeg
 │   ├── integrante05.jpeg
 │   ├── logo.png
+│   ├── page-contato.jpeg
+│   ├── page-faq.jpeg
+│   ├── page-inicial.jpeg
+│   ├── page-integrante.jpeg
+│   ├── page-pontuacao.jpeg
+│   ├── page-pontuacao2.jpeg
+│   ├── page-sobre.jpeg
+│   ├── page-sobre2.jpeg
+│   ├── page-solucao.jpeg
+│   ├── page-solucao2.jpeg
 │   ├── px1.png
 │   ├── px2.png
 │   ├── px3.png
@@ -86,7 +94,8 @@ GLOBAL SOLUTION/
 │   ├── sobre.html
 │   └── solucao.html
 │
-└── index.html
+├── index.html
+└── README.md
 ```
 
 ### 📁 Organização dos Diretórios
@@ -103,7 +112,7 @@ GLOBAL SOLUTION/
 
 ---
 
-## 👥 Autores e Créditos
+## Autores e Créditos
 
 O desenvolvimento deste projeto foi idealizado e executado pela equipe de estudantes de **Análise e Desenvolvimento de Sistemas (ADS)** da **FIAP** na **Turma 1TDSPI**:
 
@@ -125,22 +134,56 @@ O desenvolvimento deste projeto foi idealizado e executado pela equipe de estuda
 ---
 
 
-## 📸 Imagens e Representação do Projeto
+## Imagens e Representação do Projeto
 
 Abaixo estão as representações visuais das telas que compõem a plataforma, demonstrando a consistência do design, o uso estratégico da paleta de cores institucional e a aplicação de técnicas avançadas de responsividade.
 Serão implementadas.
 
+### 1. Interface Desktop (Página Inicial - `index.html`)
+![Demonstração da Home Page](assets/page-inical.jpeg)
+*Legenda: Seção principal projetada com contraste refinado, tipografia focada na legibilidade e foco na conversão imediata do usuário para conhecer o projeto.*
+
+### 2. Página Institucional (`sobre.html`)
+![Demonstração da Página Sobre](assets/page-sobre.jpeg)
+![Demonstração da Página Sobre](assets/page-sobre2.jpeg)      
+*Legenda: Apresentação do contexto e problema com os tipos de soluções. *
+
+### 3. Detalhamento da Funcionalidade (`solucao.html`)
+![Demonstração da Página de Solução](assets/page-solucao.jpeg)
+![Demonstração da Página de Solução](assets/page-solucao2.jpeg)  
+*Legenda: Explicação detalhada do Sistema Firefly, regras e a dinâmica de pontuação para resgate.*
+
+
+### 4. Sistema de Pontuacao (`pontuacao.html`)
+![Demonstracao da Página de Pontuacao](assets/page-pontuacao.jpeg)
+![Demonstracao da Página de Pontuacao](assets/page-pontuacao2.jpeg)
+*Legenda: Sistema de Pontuação para determinar tipos de riscos para resgate.*
+
+### 5. Componente de FAQ Expandido (`faq.html`)
+![Demonstração do FAQ Responsivo](assets/page-faq.jpeg)
+*Legenda: Menu do tipo Accordion tratando quebras de linhas de forma fluida através de manipulação dinâmica do DOM em JavaScript.*
+
+### 6. Página do Time (`integrantes.html`)
+![Demonstração da Página de Integrantes](assets/page-iontegrante.jpeg)  
+*Legenda: Grid responsivo exibindo os cartões dos desenvolvedores com fotos customizadas e links integrados para redes profissionais.*
+
+### 7. Canal de Atendimento e Feedback (`contato.html`)
+![Demonstração da Página de Contato](assets/page-contato.jpeg)  
+*Legenda: Firefly Formulário estruturado com validação de campos para captação de mensagens de usuários*
+
+
+
 ---
 
-## 🔗 Link do Repositório
+## Link do Repositório
 
 O código-fonte completo, histórico de evoluções e versionamento estruturado deste projeto podem ser acessados publicamente no GitHub através do link oficial:
 
-🚀 **[Acesse o Repositório Oficial no GitHub](https://github.com/GlobalSolution-2026/GlobalSolution-FrontEnd)**
+**[Acesse o Repositório Oficial no GitHub](https://github.com/GlobalSolution-2026/GlobalSolution-FrontEnd)**
 
 ---
 
-## 📞 Contato e Suporte
+## Contato e Suporte
 
 Para esclarecimento de dúvidas em relação ao projeto, feedbacks sobre a arquitetura responsiva, entre em contato através dos canais:
 
