@@ -35,12 +35,9 @@
         <section class="introducao-solucao escondido">
             <h2>O Sistema da Firefly</h2>
             <div class="box-texto">
-                <p>Nossa plataforma vai além de um simples registro de ocorrências: <strong>atuamos como um copiloto
-                        para
-                        equipes de emergência.</strong> Unindo sensores de campo, dados de satélite e inteligência
-                    preditiva baseada
-                    em MDP, transformamos a incerteza do ambiente em recomendações de resgate claras e seguras para quem
-                    está na linha de frente.</p>
+                <p>Nosso algoritmo vai além de um simples registro de ocorrências: <strong>atuamos como um copiloto
+                    para equipes de emergência.</strong> Unindo sensores, drones, dados de satélite e algoritmo de análise
+                    preditiva baseada em MDP, transformamos a incerteza do ambiente em recomendações de resgate claras e seguras para quem está na linha de frente.</p>
             </div>
         </section>
 
@@ -50,10 +47,9 @@
                 <div class="icone-pilar">
                     <img src="../assets/px5.png" alt="Iot">
                 </div>
-                <h3>Coleta Inteligente (IoT e Sensores)</h3>
-                <p>Integração em tempo real com dispositivos IoT, sensores térmicos e drones de reconhecimento. O
-                    sistema consolida dados críticos do ambiente — como temperatura, composition de gases e visibilidade
-                    — eliminando a fragmentação de informações no momento do desastre.</p>
+                <h3>Coleta Inteligente</h3>
+                <p>Integração em tempo real com dispositivos IoT, sensores térmicos, satélites e drones de reconhecimento. O
+                    sistema consolida dados críticos do ambiente — como tipo do terreno, temperatura, visibilidade, precipitação e vento — eliminando a fragmentação de informações no momento do desastre.</p>
             </div>
 
             <div class="card-pilar escondido">
@@ -62,8 +58,7 @@
                 </div>
                 <h3>Triagem Qualificada da Vítima</h3>
                 <p>Cruzamento dinâmico entre o terreno da missão e as especialidades operacionais das forças de
-                    salvamento (SAMU, Bombeiros e Defesa Civil). O sistema filtra a disponibilidade e impede o envio
-                    incorreto ou o desperdício de recursos em campo.</p>
+                    salvamento (SAMU, Bombeiros e Defesa Civil). O sistema filtra a disponibilidade e recomenda o tipo de equipe.</p>
             </div>
 
             <div class="card-pilar escondido">
@@ -71,29 +66,23 @@
                     <img src="../assets/px9.png" alt="mdp">
                 </div>
                 <h3>Algoritmo de Decisão (Modelo MDP)</h3>
-                <p>Aplicação prática e simplificada do Processo de Decisão de Markov. O motor matemático estrutura o
-                    ambiente de incerteza em uma tupla de Estados, Ações, Probabilidades e Recompensas, gerando
-                    recomendações lógicas sequenciais para o operador.</p>
+                <p>Para a definição do MDP, é utilizado uma tupla (S, A, T, R): S — conjunto de estados definidos pelo grau da vítima, meteorologia e localização; A — ações disponíveis como tipos de equipe e tecnologias (drones, sensores térmicos, satélites); T — probabilidade de transição definida pelo risco do clima e da localização; e R — recompensa/penalidade pela qualidade da decisão tomada. O resultado orienta o operador de forma correta e segura em tempo real.</p>
             </div>
 
             <div class="card-pilar escondido">
                 <div class="icone-pilar">
                     <img src="../assets/px3.png" alt="iot">
                 </div>
-                <h3>Monitoramento IoT de Alta Frequência</h3>
-                <p>A solução recebe e processa dados de telemetria enviados por sensores de campo e térmicos a cada 10
-                    segundos. Se qualquer limite de segurança ambiental ou climático for ultrapassado, o sistema dispara
-                    alertas visuais imediatos na tela.</p>
+                <h3>Monitoramento da Equipe de Resgate</h3>
+                <p>O sistema acompanha continuamente as condições do ambiente operacional — temperatura, visibilidade, precipitação e intensidade do vento — e cruza essas leituras com os limites de segurança definidos para cada tipo de equipe em campo. Ao detectar uma mudança crítica, o Firefly recalcula a Pontuação do Cenário e emite alertas visuais imediatos, protegendo tanto as vítimas quanto os socorristas.</p>
             </div>
 
             <div class="card-pilar escondido">
                 <div class="icone-pilar">
                     <img src="../assets/px2.png" alt="global">
                 </div>
-                <h3>Visão Global (Satélite e Clima)</h3>
-                <p>Monitoramento constante das dificuldades geográficas e da meteorologia através de satélites de órbita
-                    baixa (LEO) e IA climática. Essa camada garante a previsibilidade de mudanças no tempo e mapeia o
-                    terreno para definir rotas de acesso seguras.</p>
+                <h3>Tomada de Decisão</h3>
+                <p>Em resgates fora do alcance de infraestrutura urbana, o contexto geográfico é tão crítico quanto o estado da vítima. O Firefly integra dados de terreno e meteorologia para compor o estado atual do cenário (S), garantindo que as recomendações do algoritmo levem em conta não só quem precisa de resgate, mas onde e sob quais condições esse resgate precisa acontecer.</p>
             </div>
 
             <div class="card-pilar escondido">

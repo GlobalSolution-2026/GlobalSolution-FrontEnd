@@ -43,18 +43,8 @@
 
             <div class="conteudo-impacto">
                 <div class="texto-principal">
-                    <p>Embora a <strong>Sociedade 5.0</strong> coloque a tecnologia no centro do bem-estar humano,
-                        vivemos um claro
-                        paradoxo: ao mesmo tempo em que atingimos o ápice da conectividade digital, permanecemos alheios
-                        à crises e urgências que devastam nossos próprios biomas. Em cenários de desastres e
-                        emergências, onde cada segundo define o
-                        limiar entre a vida e a morte, os operadores de resgate são forçados a tomar decisões sob
-                        extrema pressão e incerteza.</p>
-                    <p>Os modelos tradicionais de resgate enfrentam extrema dificuldade para acompanhar a velocidade com
-                        que um cenário de crise muda. Fatores como a meteorologia (chuva, vento, visibilidade nula) e as
-                        dificuldades geográficas do terreno (áreas alagadas, florestas, montanhas) mudam a dinâmica do
-                        perigo a todo minuto, tornando o ambiente hostil e instável.
-                    </p>
+                    <p>Com a evolução da tecnologia nas últimas décadas, tornou-se possível a sua utilização em larga escala em cenários de desastres naturais ou acidentes em áreas remotas. O uso da tecnologia possibilitou a transformação da gestão de crises e operações de emergência — com drones, sensores térmicos, IAs de previsibilidade sobre o clima e algoritmos de análise preditiva — trazendo a possibilidade de otimização do tempo das equipes de salvamento e garantindo sua segurança. </p>
+                    <p>Os modelos tradicionais enfrentam dificuldade devido às rápidas mudanças dentro de um ambiente, na qual, decisões erradas custam vidas. A ausência de ferramentas que correlacionem as variáveis do cenário aumenta a possibilidade de erros humanos e compromete a segurança das vítimas e da equipe de resgate. </p>
                 </div>
 
                 <div class="card-estatistica escondido">
@@ -75,33 +65,25 @@
                 <div class="card-mini escondido">
                     <div class="badge-icon">01</div>
                     <h3>Consciência Situacional Baseado em MDP Simplificado</h3>
-                    <p>O sistema soluciona a lentidão humana na análise de dados complexos através de um algoritmo
-                        preditivo. Ele pega as 5 variáveis do cenário (gravidade da vítima, tempo, localização, clima e
-                        equipe) e roda uma equação de Processo de Decisão de Markov de forma imediata.</p>
+                    <p>O MDP é utilizado para modelar situações nas quais é necessário executar ações em sequência em ambientes com incerteza — tanto a incerteza em relação ao resultado das ações quanto ao estado atual do ambiente. A partir de sua teoria, chegamos às 5 variáveis: o Estado (S) é definido pelo grau da situação da vítima, meteorologia e localização; as Ações (A) pelos recursos disponíveis; a Transição (T) pelos riscos do clima e da localização; e a Recompensa (R) pela qualidade da ação tomada.</p>
                 </div>
 
                 <div class="card-mini escondido">
                     <div class="badge-icon">02</div>
                     <h3>Conectividade em Áreas Isoladas (Satélites LEO)</h3>
-                    <p>O sistema verifica a infraestrutura da região antes e viabiliza a descida de dados via IoT de 10
-                        em 10 segundos, mantendo a missão monitorada mesmo sem sinal de celular.</p>
+                    <p>O sistema verifica a infraestrutura de comunicação da região antes de alocar qualquer recurso. Em áreas totalmente isoladas — como biomas remotos ou zonas de desastre total — a plataforma viabiliza a transmissão de dados via satélites de órbita baixa (LEO), como Starlink ou Kuiper, garantindo que sensores IoT continuem enviando telemetria a cada 10 segundos mesmo sem cobertura celular.</p>
                 </div>
 
                 <div class="card-mini escondido">
                     <div class="badge-icon">03</div>
                     <h3>Módulo de Auditoria Imutável</h3>
-                    <p>Cada escolha feita pelo operador gera um log auditável gerado automaticamente que calcula
-                        subpontuações em tempo real. Ao encerrar uma missão (seja como Sucesso ou Fracasso), os dados se
-                        tornam totalmente imutáveis.</p>
+                    <p>A cada decisão tomada pelo operador, o algoritmo registra automaticamente a subpontuação gerada — positiva ou negativa — com base na equação de Recompensa do MDP. Ao encerrar uma missão como Sucesso ou Fracasso, todo o histórico de ações e penalidades se torna imutável, formando um log de auditoria que recalcula a taxa de acerto do operador e alimenta o aprendizado do sistema.</p>
                 </div>
 
                 <div class="card-mini escondido">
                     <div class="badge-icon">04</div>
                     <h3>Triagem e Alocação Inteligente de Recursos</h3>
-                    <p>A solução cruza automaticamente o perfil das equipes e das tecnologias disponíveis com as
-                        restrições reais do terreno e do clima. Se o operador tentar enviar uma equipe terrestre para
-                        uma área alagada, ou um drone comum para uma área com neblina e visibilidade nula, o sistema
-                        aplica penalidades de pontuação ou bloqueia a ação. </p>
+                    <p>As Ações (A) disponíveis no sistema incluem diferentes perfis de equipe — SAMU, Bombeiros, Defesa Civil — e tecnologias como drones, sensores térmicos e satélites de localização. A função de Transição (T) do MDP avalia o risco do clima e do terreno antes de validar cada escolha: enviar uma equipe terrestre a uma área alagada, ou um drone a uma região com neblina, gera penalidades instantâneas de pontuação.</p>
                 </div>
 
             </div>

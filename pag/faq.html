@@ -44,12 +44,7 @@
                 <button class="faq-question">O que é o Processo de Decisão de Markov (MDP) e como o Firefly o
                     utiliza?</button>
                 <div class="faq-answer">
-                    <p>O MDP é um modelo matemático voltado para a tomada de decisões em cenários onde os resultados são
-                        parcialmente aleatórios e parcialmente controlados pelo tomador de decisão. O Firefly simplifica
-                        esse conceito aplicando uma equação dinâmica em tempo real que calcula o risco do cenário. A
-                        cada ação simulada ou tomada pelo operador, o algoritmo avalia o impacto e exibe em destaque a
-                        estratégia que oferece a maior "Recompensa" (maior chance de sucesso com menor risco
-                        operacional).</p>
+                    <p>O Processo de Decisão de Markov traz a possibilidade de modelar situações nas quais é necessário executar ações em sequência em ambientes com incerteza — tanto a incerteza em relação ao resultado das ações executadas quanto ao estado atual do ambiente. Trazendo para a realidade de um resgate: cada estado é um possível número de vítimas em urgência; as ações são os tipos de resgate disponíveis; e o operador não tem controle sobre o resultado — este é um evento que não pode ser previsto com total certeza. O Firefly modela essa situação como um MDP e entrega a recomendação de maior recompensa esperada em tempo real.</p>
                 </div>
             </article>
 
@@ -57,11 +52,7 @@
                 <button class="faq-question">Como o sistema garante a comunicação em biomas isolados ou áreas de
                     desastre total?</button>
                 <div class="faq-answer">
-                    <p>Este é um dos pilares do projeto. O Firefly integra validações para o uso de tecnologias de
-                        satélite de órbita baixa (LEO), como Starlink ou Kuiper. Antes de alocar recursos, o sistema
-                        verifica a infraestrutura de comunicação da região. Se a área estiver totalmente isolada, a
-                        plataforma viabiliza a descida e subida de dados via IoT de 10 em 10 segundos diretamente via
-                        constelações de satélites, impedindo que a equipe de resgate perca o contato.</p>
+                    <p>A imprevisibilidade de um cenário de emergência não para quando o sinal de celular acaba. Por isso, o Firefly integra suporte a satélites de órbita baixa (LEO) como camada de contingência de comunicação. Se a infraestrutura da região estiver comprometida, a plataforma mantém o fluxo de dados do campo ativo via IoT, garantindo que nenhuma mudança crítica do ambiente passe despercebida pelo operador.</p>
                 </div>
             </article>
 
@@ -69,25 +60,20 @@
                 <button class="faq-question">O que acontece se o operador tomar uma decisão incompatível com o
                     cenário?</button>
                 <div class="faq-answer">
-                    <p>O Firefly possui um sistema automatizado de mitigação de erros (Smart Allocation). Se o operador
-                        tentar enviar uma equipe terrestre para uma área alagada, ou um drone de reconhecimento comum
-                        para uma região com visibilidade nula por neblina, o sistema aplica penalidades de pontuação
-                        instantâneas e gera alertas visuais. No encerramento da missão, essas penalidades são
-                        consolidadas na tabela de auditoria de forma imutável, o que afeta diretamente a taxa de acerto
-                        do operador. </p>
+                    <p>O Firefly possui um sistema automatizado de mitigação de erros. Se o operador tentar enviar uma equipe terrestre para uma área alagada, ou um drone de reconhecimento comum para uma região com visibilidade nula por neblina, o sistema aplica penalidades de pontuação instantâneas e gera alertas visuais. No encerramento da missão, essas penalidades são consolidadas na tabela de auditoria de forma imutável, o que afeta diretamente a taxa de acerto do operador.</p>
                 </div>
             </article>
 
             <article class="faq-item escondido">
-                <button class="faq-question">Os dados meteorológicos e de sensores são atualizados de quanto em quanto
-                    tempo?</button>
+                <button class="faq-question">Qualquer profissional de emergência pode usar o Firefly, ou ele exige treinamento específico?</button>
                 <div class="faq-answer">
-                    <p>O sistema é alimentado em tempo real. Os dados provenientes de sensores de campo e dispositivos
-                        IoT são recebidos a cada 10 segundos. Caso alguma variável crítica (como velocidade do vento,
-                        volume de chuva ou visibilidade) ultrapasse os limites toleráveis de segurança, o sistema
-                        recalcula o "Multiplicador de Clima" e dispara alertas visuais imediatos para que o operador
-                        mude a estratégia de resgate.
-                    </p>
+                    <p>O Firefly foi projetado para operadores de resgate, comandantes de operações e socorristas em campo — profissionais como bombeiros, equipes do SAMU e defesa civil. A interface foi pensada para cenários de alta pressão, então as recomendações do algoritmo chegam de forma visual e direta, sem exigir que o operador entenda a matemática por trás do MDP. O sistema traduz a complexidade do cálculo em uma ação clara: o que fazer, com qual equipe e em qual ordem de prioridade.</p>
+                </div>
+            </article>
+            <article class="faq-item escondido">
+                <button class="faq-question">Como o sistema define se uma missão foi bem executada?</button>
+                <div class="faq-answer">
+                    <p>Ao encerrar uma missão, o Firefly consolida todas as decisões tomadas e calcula a Pontuação Final com base na fórmula: Gravidade da Vítima + Urgência do Tempo × (Multiplicador de Clima + Multiplicador de Localização), descontando as penalidades acumuladas por escolhas incompatíveis com o cenário. Esse resultado classifica a missão em Risco Baixo, Moderado ou Alto e atualiza automaticamente a taxa de acerto do operador </p>
                 </div>
             </article>
         </section>
