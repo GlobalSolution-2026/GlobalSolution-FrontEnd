@@ -51,51 +51,51 @@ Para a construção desta interface moderna, responsiva e fluida, foram utilizad
 GLOBAL SOLUTION/
 │
 ├── .vscode/
-│   └── settings.json
+│   └── settings.json                  #Visual Studio Code (VS Code) para armazenar configurações específicas de um projeto.
 │
 ├── assets/
-│   ├── integrante01.jpeg
-│   ├── integrante02.jpeg
-│   ├── integrante03.jpeg
-│   ├── integrante04.jpeg
-│   ├── integrante05.jpeg
-│   ├── logo.png
-│   ├── page-contato.jpeg
-│   ├── page-faq.jpeg
-│   ├── page-inicial.jpeg
-│   ├── page-integrante.jpeg
-│   ├── page-pontuacao.jpeg
-│   ├── page-pontuacao2.jpeg
-│   ├── page-sobre.jpeg
-│   ├── page-sobre2.jpeg
-│   ├── page-solucao.jpeg
-│   ├── page-solucao2.jpeg
-│   ├── px1.png
-│   ├── px2.png
-│   ├── px3.png
-│   ├── px4.png
-│   ├── px5.png
-│   ├── px6.png
-│   ├── px7.png
-│   ├── px8.png
-│   └── px9.png
+│   ├── integrante01.jpeg              #Imagem Integrante
+│   ├── integrante02.jpeg              #Imagem Integrante
+│   ├── integrante03.jpeg              #Imagem Integrante
+│   ├── integrante04.jpeg              #Imagem Integrante
+│   ├── integrante05.jpeg              #Imagem Integrante
+│   ├── logo.png                       #Imagem page Logo
+│   ├── page-contato.jpeg              #Imagem page Contato
+│   ├── page-faq.jpeg                  #Imagem page Faq
+│   ├── page-inicial.jpeg              #Imagem page Inicial
+│   ├── page-integrante.jpeg           #Imagem page Integrantes
+│   ├── page-pontuacao.jpeg            #Imagem page Pontuacao
+│   ├── page-pontuacao2.jpeg           #Imagem page Pontuacao
+│   ├── page-sobre.jpeg                #Imagem page Sobre
+│   ├── page-sobre2.jpeg               #Imagem page Sobre
+│   ├── page-solucao.jpeg              # Imagem page Solucao
+│   ├── page-solucao2.jpeg             # Imagem page Solucao
+│   ├── px1.png                        #Imagem Ilustrativa Pixelada
+│   ├── px2.png                        #Imagem Ilustrativa Pixelada
+│   ├── px3.png                        #Imagem Ilustrativa Pixelada
+│   ├── px4.png                        #Imagem Ilustrativa Pixelada
+│   ├── px5.png                        #Imagem Ilustrativa Pixelada
+│   ├── px6.png                        #Imagem Ilustrativa Pixelada
+│   ├── px7.png                        #Imagem Ilustrativa Pixelada
+│   ├── px8.png                        #Imagem Ilustrativa Pixelada
+│   └── px9.png                        #Imagem Ilustrativa Pixelada
 │
 ├── css/
-│   └── style.css
+│   └── style.css              # Folha de estilo unificada (Global, Componentes e Responsividade)
 │
 ├── js/
-│   └── main.js
+│   └── main.js                # Lógica comportamental em JavaScript (Interação do FAQ e contato)
 │
 ├── pag/
-│   ├── contato.html
-│   ├── faq.html
-│   ├── integrantes.html
-│   ├── pontuacao.html
-│   ├── sobre.html
-│   └── solucao.html
+│   ├── contato.html           # Pagine de Contato Firefly
+│   ├── faq.html               # Página de Dúvidas Frequentes (accordion interativo)
+│   ├── integrantes.html       # Página sobre os integrantes (nome, rm, Linkedin e GitHub)
+│   ├── pontuacao.html         # Página sobre a Funcionalidade da Pontuacao (nome, rm, Linkedin e GitHub)
+│   ├── sobre.html             # Página Institucional (contexto e Missão Firefly)
+│   └── solucao.html           # Página de continuação sobre o projeto (funcionalidade)
 │
-├── index.html
-└── README.md
+├── index.html                 # Página Inicial (apresentação e informações)
+└── README.md                  # Guia técnico e informativo (este arquivo)
 ```
 
 ### 📁 Organização dos Diretórios
