@@ -1,12 +1,12 @@
 # 🔥 Firefly
 
-Sistema inteligente de apoio à tomada de decisão em operações de resgate e gerenciamento de emergências.
+Um algoritmo de apoio à tomada de decisão em operações de resgate e gerenciamento de emergências.
 
-## Sobre o Projeto
+## 📄 Sobre o Projeto
 
-O Firefly é uma plataforma desenvolvida para auxiliar equipes de resgate, bombeiros, SAMU e Defesa Civil na tomada de decisões em cenários de alta complexidade e imprevisibilidade.
+O Firefly é um algoritmo desenvolvido para auxiliar equipes de resgate, bombeiros, SAMU e Defesa Civil na tomada de decisões em cenários de alta complexidade e imprevisibilidade.
 
-A solução utiliza conceitos de Análise Preditiva, Internet das Coisas (IoT), Inteligência Artificial e uma aplicação simplificada do Processo de Decisão de Markov (MDP) para transformar situações de risco em decisões baseadas em dados.
+A solução utiliza conceitos de Análise Preditiva e aplicação simplificada do Processo de Decisão de Markov (MDP) para transformar situações de risco em decisões baseadas em dados.
 
 O sistema considera fatores como:
 
@@ -20,19 +20,19 @@ A partir dessas informações, o Firefly gera recomendações para auxiliar os o
 
 ---
 
-## Objetivo
+## ✅ Objetivo
 
 Desenvolver uma ferramenta capaz de:
 
 - Reduzir erros humanos em operações de emergência;
 - Otimizar o tempo de resposta das equipes;
 - Aumentar a segurança dos socorristas;
-- Integrar tecnologias já existentes em uma única plataforma;
+- Integrar tecnologias já existentes;
 - Apoiar decisões através de análise preditiva.
 
 ---
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 Para a construção desta interface moderna, responsiva e fluida, foram utilizadas as seguintes tecnologias e ferramentas:
 
@@ -51,54 +51,54 @@ Para a construção desta interface moderna, responsiva e fluida, foram utilizad
 GLOBAL SOLUTION/
 │
 ├── .vscode/
-│   └── settings.json                  #Visual Studio Code (VS Code) para armazenar configurações específicas de um projeto.
+│   └── settings.json                  # Visual Studio Code (VS Code) para armazenar configurações específicas de um projeto.
 │
 ├── assets/
-│   ├── integrante01.jpeg              #Imagem Integrante
-│   ├── integrante02.jpeg              #Imagem Integrante
-│   ├── integrante03.jpeg              #Imagem Integrante
-│   ├── integrante04.jpeg              #Imagem Integrante
-│   ├── integrante05.jpeg              #Imagem Integrante
-│   ├── logo.png                       #Imagem page Logo
-│   ├── page-contato.jpeg              #Imagem page Contato
-│   ├── page-faq.jpeg                  #Imagem page Faq
-│   ├── page-inicial.jpeg              #Imagem page Inicial
-│   ├── page-integrante.jpeg           #Imagem page Integrantes
-│   ├── page-pontuacao.jpeg            #Imagem page Pontuacao
-│   ├── page-pontuacao2.jpeg           #Imagem page Pontuacao
-│   ├── page-sobre.jpeg                #Imagem page Sobre
-│   ├── page-sobre2.jpeg               #Imagem page Sobre
-│   ├── page-solucao.jpeg              # Imagem page Solucao
-│   ├── page-solucao2.jpeg             # Imagem page Solucao
-│   ├── px1.png                        #Imagem Ilustrativa Pixelada
-│   ├── px2.png                        #Imagem Ilustrativa Pixelada
-│   ├── px3.png                        #Imagem Ilustrativa Pixelada
-│   ├── px4.png                        #Imagem Ilustrativa Pixelada
-│   ├── px5.png                        #Imagem Ilustrativa Pixelada
-│   ├── px6.png                        #Imagem Ilustrativa Pixelada
-│   ├── px7.png                        #Imagem Ilustrativa Pixelada
-│   ├── px8.png                        #Imagem Ilustrativa Pixelada
-│   └── px9.png                        #Imagem Ilustrativa Pixelada
+│   ├── integrante01.jpeg              # Foto da integrante Ana
+│   ├── integrante02.jpeg              # Foto do integrante Cauã
+│   ├── integrante03.jpeg              # Foto do integrante Eduardo
+│   ├── integrante04.jpeg              # Foto do integrante Nicolas Frazão
+│   ├── integrante05.jpeg              # Foto do integrante Nicolas Rodrigues
+│   ├── logo.png                       # Logotipo oficial Firefly
+│   ├── page-contato.jpeg              # Foto da página Contato
+│   ├── page-faq.jpeg                  # Foto da página FAQ
+│   ├── page-inicial.jpeg              # Foto da página Index
+│   ├── page-integrante.jpeg           # Foto da página Integrantes
+│   ├── page-pontuacao.jpeg            # Foto da página Pontuação
+│   ├── page-pontuacao2.jpeg           # Foto da página Pontuação
+│   ├── page-sobre.jpeg                # Foto da página Sobre
+│   ├── page-sobre2.jpeg               # Foto da página Sobre
+│   ├── page-solucao.jpeg              # Foto da página Solução
+│   ├── page-solucao2.jpeg             # Foto da página Solução
+│   ├── px1.png                        # Imagem Ilustrativa Pixelada
+│   ├── px2.png                        # Imagem Ilustrativa Pixelada
+│   ├── px3.png                        # Imagem Ilustrativa Pixelada
+│   ├── px4.png                        # Imagem Ilustrativa Pixelada
+│   ├── px5.png                        # Imagem Ilustrativa Pixelada
+│   ├── px6.png                        # Imagem Ilustrativa Pixelada
+│   ├── px7.png                        # Imagem Ilustrativa Pixelada
+│   ├── px8.png                        # Imagem Ilustrativa Pixelada
+│   └── px9.png                        # Imagem Ilustrativa Pixelada
 │
 ├── css/
-│   └── style.css              # Folha de estilo unificada (Global, Componentes e Responsividade)
+│   └── style.css                      # Folha de estilo unificada (Global, Componentes e Responsividade)
 │
 ├── js/
-│   └── main.js                # Lógica comportamental em JavaScript (Interação do FAQ e contato)
+│   └── main.js                        # Lógica comportamental em JavaScript (Interação do FAQ e contato)
 │
 ├── pag/
-│   ├── contato.html           # Pagine de Contato Firefly
-│   ├── faq.html               # Página de Dúvidas Frequentes (accordion interativo)
-│   ├── integrantes.html       # Página sobre os integrantes (nome, rm, Linkedin e GitHub)
-│   ├── pontuacao.html         # Página sobre a Funcionalidade da Pontuacao (nome, rm, Linkedin e GitHub)
-│   ├── sobre.html             # Página Institucional (contexto e Missão Firefly)
-│   └── solucao.html           # Página de continuação sobre o projeto (funcionalidade)
+│   ├── contato.html                   # Página de Contato Firefly
+│   ├── faq.html                       # Página de Dúvidas Frequentes (accordion interativo)
+│   ├── integrantes.html               # Página sobre os integrantes (nome, rm, Linkedin e GitHub)
+│   ├── pontuacao.html                 # Página sobre a Demonstração da Pontuação
+│   ├── sobre.html                     # Página sobre o projeto (contexto)
+│   └── solucao.html                   # Página de continuação sobre o projeto (funcionalidade)
 │
-├── index.html                 # Página Inicial (apresentação e informações)
-└── README.md                  # Guia técnico e informativo (este arquivo)
+├── index.html                         # Página Inicial (apresentação e informações)
+└── README.md                          # Guia técnico e informativo (este arquivo)
 ```
 
-### 📁 Organização dos Diretórios
+### 🗂️ Organização dos Diretórios
 
 | Diretório | Descrição |
 |------------|------------|
@@ -112,7 +112,7 @@ GLOBAL SOLUTION/
 
 ---
 
-## Autores e Créditos
+## 👥 Autores e Créditos
 
 O desenvolvimento deste projeto foi idealizado e executado pela equipe de estudantes de **Análise e Desenvolvimento de Sistemas (ADS)** da **FIAP** na **Turma 1TDSPI**:
 
@@ -134,40 +134,40 @@ O desenvolvimento deste projeto foi idealizado e executado pela equipe de estuda
 ---
 
 
-## Imagens e Representação do Projeto
+## 📸 Imagens e Representação do Projeto
 
 Abaixo estão as representações visuais das telas que compõem a plataforma, demonstrando a consistência do design, o uso estratégico da paleta de cores institucional e a aplicação de técnicas avançadas de responsividade.
 Serão implementadas.
 
-### 1. Interface Desktop (Página Inicial - `index.html`)
+### 💻 1. Interface Desktop (Página Inicial - `index.html`)
 ![Demonstração da Home Page](assets/page-inical.jpeg)
 *Legenda: Seção principal projetada com contraste refinado, tipografia focada na legibilidade e foco na conversão imediata do usuário para conhecer o projeto.*
 
-### 2. Página Institucional (`sobre.html`)
+### 📄 2. Página Institucional (`sobre.html`)
 ![Demonstração da Página Sobre](assets/page-sobre.jpeg)
 ![Demonstração da Página Sobre](assets/page-sobre2.jpeg)      
-*Legenda: Apresentação do contexto e problema com os tipos de soluções. *
+*Legenda: Apresentação do contexto e problema. e com os tipos de soluções. *
 
-### 3. Detalhamento da Funcionalidade (`solucao.html`)
+### 🚀 3. Detalhamento da Funcionalidade (`solucao.html`)
 ![Demonstração da Página de Solução](assets/page-solucao.jpeg)
 ![Demonstração da Página de Solução](assets/page-solucao2.jpeg)  
-*Legenda: Explicação detalhada do Sistema Firefly, regras e a dinâmica de pontuação para resgate.*
+*Legenda: Explicação detalhada do algoritmo Firefly, regras e a dinâmica de pontuação para resgate.*
 
 
-### 4. Sistema de Pontuacao (`pontuacao.html`)
+### 🕹️ 4. Sistema de Pontuação (`pontuacao.html`)
 ![Demonstracao da Página de Pontuacao](assets/page-pontuacao.jpeg)
 ![Demonstracao da Página de Pontuacao](assets/page-pontuacao2.jpeg)
 *Legenda: Sistema de Pontuação para determinar tipos de riscos para resgate.*
 
-### 5. Componente de FAQ Expandido (`faq.html`)
+### 📱 5. Componente de FAQ Expandido (`faq.html`)
 ![Demonstração do FAQ Responsivo](assets/page-faq.jpeg)
 *Legenda: Menu do tipo Accordion tratando quebras de linhas de forma fluida através de manipulação dinâmica do DOM em JavaScript.*
 
-### 6. Página do Time (`integrantes.html`)
+### 👥 6. Página do Time (`integrantes.html`)
 ![Demonstração da Página de Integrantes](assets/page-iontegrante.jpeg)  
 *Legenda: Grid responsivo exibindo os cartões dos desenvolvedores com fotos customizadas e links integrados para redes profissionais.*
 
-### 7. Canal de Atendimento e Feedback (`contato.html`)
+### ✉️ 7. Canal de Atendimento e Feedback (`contato.html`)
 ![Demonstração da Página de Contato](assets/page-contato.jpeg)  
 *Legenda: Firefly Formulário estruturado com validação de campos para captação de mensagens de usuários*
 
@@ -175,7 +175,7 @@ Serão implementadas.
 
 ---
 
-## Link do Repositório
+## 🔗 Link do Repositório
 
 O código-fonte completo, histórico de evoluções e versionamento estruturado deste projeto podem ser acessados publicamente no GitHub através do link oficial:
 
@@ -183,7 +183,7 @@ O código-fonte completo, histórico de evoluções e versionamento estruturado 
 
 ---
 
-## Contato e Suporte
+## 📞 Contato e Suporte
 
 Para esclarecimento de dúvidas em relação ao projeto, feedbacks sobre a arquitetura responsiva, entre em contato através dos canais:
 
